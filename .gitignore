@@ -1,1 +1,7 @@
 ﻿*.suo
+src/LowLevelAPI/Common/bin
+src/LowLevelAPI/DrawTextureCube/bin
+src/LowLevelAPI/DrawTriangle/bin
+src/LowLevelAPI/DrawTriangle/obj
+src/LowLevelAPI/DrawTextureCube/obj
+src/LowLevelAPI/Common/obj
