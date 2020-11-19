@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrawTriangle", "DrawTriangl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawTextureCube", "DrawTextureCube\DrawTextureCube.csproj", "{55895B9D-4A66-4828-9A0C-C2DB3F172737}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Texture2DArray", "Texture2DArray\Texture2DArray.csproj", "{A3CAE6AC-69AF-428C-85EC-E54E6D8D1248}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{55895B9D-4A66-4828-9A0C-C2DB3F172737}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55895B9D-4A66-4828-9A0C-C2DB3F172737}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55895B9D-4A66-4828-9A0C-C2DB3F172737}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3CAE6AC-69AF-428C-85EC-E54E6D8D1248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3CAE6AC-69AF-428C-85EC-E54E6D8D1248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3CAE6AC-69AF-428C-85EC-E54E6D8D1248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3CAE6AC-69AF-428C-85EC-E54E6D8D1248}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
