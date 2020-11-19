@@ -8,3 +8,5 @@ src/LowLevelAPI/Common/obj
 src/LowLevelAPI/.vs/LowLevelAPI/DesignTimeBuild/.dtbcache.v2
 src/LowLevelAPI/Texture2DArray/bin
 src/LowLevelAPI/Texture2DArray/obj
+src/LowLevelAPI/Stencil/bin
+src/LowLevelAPI/Stencil/obj
