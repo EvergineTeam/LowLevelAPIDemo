@@ -10,3 +10,5 @@ src/LowLevelAPI/Texture2DArray/bin
 src/LowLevelAPI/Texture2DArray/obj
 src/LowLevelAPI/Stencil/bin
 src/LowLevelAPI/Stencil/obj
+src/LowLevelAPI/GeometryShader/bin
+src/LowLevelAPI/GeometryShader/obj
