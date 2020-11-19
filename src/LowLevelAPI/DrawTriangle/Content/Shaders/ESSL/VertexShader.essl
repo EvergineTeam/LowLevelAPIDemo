@@ -1,0 +1,13 @@
+#version 300 es
+precision highp float;
+
+layout (location = 0) in vec4 Position0;
+layout (location = 1) in vec4 Color0;
+
+out vec4 color;
+
+void main()
+{    
+    gl_Position = Position0;	
+	color = Color0;
+}
