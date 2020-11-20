@@ -178,11 +178,12 @@ namespace DrawTextureCube
 
             commandBuffer.UpdateBufferData(this.constantBuffer, ref worldViewProj);
 
+
+            RenderPassDescription renderPassDescription = new RenderPassDescription(this.frameBuffer, new ClearValue(ClearFlags.Target, 1, 0, Color.CornflowerBlue));
+            commandBuffer.BeginRenderPass(ref renderPassDescription);
+
             commandBuffer.SetViewports(this.viewports);
             commandBuffer.SetScissorRectangles(this.scissors);
-
-            RenderPassDescription renderPassDescription = new RenderPassDescription(this.frameBuffer, new ClearValue(ClearFlags.Target, Color.CornflowerBlue));
-            commandBuffer.BeginRenderPass(ref renderPassDescription);
 
             commandBuffer.SetGraphicsPipelineState(this.pipelineState);
             commandBuffer.SetResourceSet(this.resourceSet);
