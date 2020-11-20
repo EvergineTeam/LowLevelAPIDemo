@@ -60,13 +60,13 @@
   </ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="WaveEngine.Common" Version="3.0.0.6450-nightly" />
-		<PackageReference Include="WaveEngine.DirectX11" Version="3.0.0.6450-nightly" />
-		<PackageReference Include="WaveEngine.DirectX12" Version="3.0.0.6450-nightly" />
-		<PackageReference Include="WaveEngine.Mathematics" Version="3.0.0.6450-nightly" />
-		<PackageReference Include="WaveEngine.OpenGL" Version="3.0.0.6450-nightly" />
-		<PackageReference Include="WaveEngine.SDL" Version="3.0.0.6450-nightly" />
-		<PackageReference Include="WaveEngine.Vulkan" Version="3.0.0.6450-nightly" />
+		<PackageReference Include="WaveEngine.Common" Version="3.1.0.6468-preview" />
+		<PackageReference Include="WaveEngine.DirectX11" Version="3.1.0.6468-preview" />
+		<PackageReference Include="WaveEngine.DirectX12" Version="3.1.0.6468-preview" />
+		<PackageReference Include="WaveEngine.Mathematics" Version="3.1.0.6468-preview" />
+		<PackageReference Include="WaveEngine.OpenGL" Version="3.1.0.6468-preview" />
+		<PackageReference Include="WaveEngine.SDL" Version="3.1.0.6468-preview" />
+		<PackageReference Include="WaveEngine.Vulkan" Version="3.1.0.6468-preview" />
 	</ItemGroup>
 	
   <ItemGroup>
