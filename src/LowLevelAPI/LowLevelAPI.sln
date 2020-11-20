@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrawTextureCube", "DrawText
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Texture2DArray", "Texture2DArray\Texture2DArray.csproj", "{A3CAE6AC-69AF-428C-85EC-E54E6D8D1248}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stencil", "Stencil\Stencil.csproj", "{791AD40F-2C76-4070-BA94-EC463C411B13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stencil", "Stencil\Stencil.csproj", "{791AD40F-2C76-4070-BA94-EC463C411B13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometryShader", "GeometryShader\GeometryShader.csproj", "{1069E516-6783-45B0-8756-7B3026FBBB7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeometryShader", "GeometryShader\GeometryShader.csproj", "{1069E516-6783-45B0-8756-7B3026FBBB7D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextureCubeArray", "TextureCubeArray\TextureCubeArray.csproj", "{6115E672-B027-4E33-9466-80E6781FB854}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{1069E516-6783-45B0-8756-7B3026FBBB7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1069E516-6783-45B0-8756-7B3026FBBB7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1069E516-6783-45B0-8756-7B3026FBBB7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6115E672-B027-4E33-9466-80E6781FB854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6115E672-B027-4E33-9466-80E6781FB854}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6115E672-B027-4E33-9466-80E6781FB854}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6115E672-B027-4E33-9466-80E6781FB854}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

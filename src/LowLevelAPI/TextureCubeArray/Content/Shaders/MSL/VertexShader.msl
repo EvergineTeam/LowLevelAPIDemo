@@ -1,0 +1,38 @@
+#include <metal_stdlib>
+#include <simd/simd.h>
+
+using namespace metal;
+
+struct type_Matrices
+{
+    float4x4 worldViewProj;
+    float4x4 World;
+    float4x4 WorldInverseTranspose;
+    float3 CameraPosition;
+};
+
+struct VS_out
+{
+    float4 out_var_TEXCOORD0 [[user(locn0)]];
+    float3 out_var_TEXCOORD1 [[user(locn1)]];
+    float3 out_var_TEXCOORD2 [[user(locn2)]];
+    float4 gl_Position [[position]];
+};
+
+struct VS_in
+{
+    float4 in_var_POSITION [[attribute(0)]];
+    float3 in_var_NORMAL [[attribute(1)]];
+};
+
+vertex VS_out VS(VS_in in [[stage_in]], constant type_Matrices& Matrices [[buffer(0)]])
+{
+    VS_out out = {};
+    float4 _37 = Matrices.worldViewProj * in.in_var_POSITION;
+    out.gl_Position = _37;
+    out.out_var_TEXCOORD0 = _37;
+    out.out_var_TEXCOORD1 = (Matrices.World * in.in_var_POSITION).xyz - Matrices.CameraPosition;
+    out.out_var_TEXCOORD2 = float3x3(Matrices.WorldInverseTranspose[0].xyz, Matrices.WorldInverseTranspose[1].xyz, Matrices.WorldInverseTranspose[2].xyz) * in.in_var_NORMAL;
+    return out;
+}
+
