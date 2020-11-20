@@ -28,7 +28,7 @@ Set of samples using the Low Level abstraction API over Vulkan, DirectX, OpenGL,
 ## Compute Texture
 ![alt Screenshot8](https://github.com/WaveEngine/LowLevelAPIDemo/blob/main/Captures/Capture9.png)
 
-## Compute Raytracing shader
+## Compute Raytracing
 ![alt Screenshot9](https://github.com/WaveEngine/LowLevelAPIDemo/blob/main/Captures/Capture0.PNG)
 
 
