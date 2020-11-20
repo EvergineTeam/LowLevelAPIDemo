@@ -1,0 +1,100 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Content\Shaders\ESSL\CubeFragmentShader.essl" />
+    <None Remove="Content\Shaders\ESSL\CubeVertexShader.essl" />
+    <None Remove="Content\Shaders\ESSL\TriangleFragmentShader.essl" />
+    <None Remove="Content\Shaders\ESSL\TriangleVertexShader.essl" />
+    <None Remove="Content\Shaders\GLSL\CubeFragmentShader.glsl" />
+    <None Remove="Content\Shaders\GLSL\CubeVertexShader.glsl" />
+    <None Remove="Content\Shaders\GLSL\TriangleFragmentShader.glsl" />
+    <None Remove="Content\Shaders\GLSL\TriangleVertexShader.glsl" />
+    <None Remove="Content\Shaders\HLSL\CubeHLSL.fx" />
+    <None Remove="Content\Shaders\HLSL\TriangleHLSL.fx" />
+    <None Remove="Content\Shaders\MSL\CubeFragmentShader.msl" />
+    <None Remove="Content\Shaders\MSL\CubeVertexShader.msl" />
+    <None Remove="Content\Shaders\MSL\TriangleFragmentShader.msl" />
+    <None Remove="Content\Shaders\MSL\TriangleVertexShader.msl" />
+    <None Remove="Content\Shaders\VK\CubeFragmentShader.spirv" />
+    <None Remove="Content\Shaders\VK\CubeVertexShader.spirv" />
+    <None Remove="Content\Shaders\VK\TriangleFragmentShader.spirv" />
+    <None Remove="Content\Shaders\VK\TriangleVertexShader.spirv" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Content\Shaders\ESSL\CubeFragmentShader.essl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Shaders\ESSL\CubeVertexShader.essl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Shaders\ESSL\TriangleFragmentShader.essl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Shaders\ESSL\TriangleVertexShader.essl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Shaders\GLSL\CubeFragmentShader.glsl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Shaders\GLSL\CubeVertexShader.glsl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Shaders\GLSL\TriangleFragmentShader.glsl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Shaders\GLSL\TriangleVertexShader.glsl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Shaders\HLSL\CubeHLSL.fx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Shaders\HLSL\TriangleHLSL.fx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Shaders\MSL\CubeFragmentShader.msl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Shaders\MSL\CubeVertexShader.msl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Shaders\MSL\TriangleFragmentShader.msl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Shaders\MSL\TriangleVertexShader.msl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Shaders\VK\CubeFragmentShader.spirv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Shaders\VK\CubeVertexShader.spirv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Shaders\VK\TriangleFragmentShader.spirv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Shaders\VK\TriangleVertexShader.spirv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="WaveEngine.Common" Version="3.0.0.6450-nightly" />
+		<PackageReference Include="WaveEngine.DirectX11" Version="3.0.0.6450-nightly" />
+		<PackageReference Include="WaveEngine.DirectX12" Version="3.0.0.6450-nightly" />
+		<PackageReference Include="WaveEngine.Mathematics" Version="3.0.0.6450-nightly" />
+		<PackageReference Include="WaveEngine.OpenGL" Version="3.0.0.6450-nightly" />
+		<PackageReference Include="WaveEngine.SDL" Version="3.0.0.6450-nightly" />
+		<PackageReference Include="WaveEngine.Vulkan" Version="3.0.0.6450-nightly" />
+	</ItemGroup>
+	
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj" />
+  </ItemGroup>
+
+</Project>

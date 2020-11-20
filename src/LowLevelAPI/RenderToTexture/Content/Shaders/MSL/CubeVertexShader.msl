@@ -1,0 +1,30 @@
+#include <metal_stdlib>
+#include <simd/simd.h>
+
+using namespace metal;
+
+struct type_Globals
+{
+    float4x4 worldViewProj;
+};
+
+struct VS_out
+{
+    float2 out_var_TEXCOORD [[user(locn0)]];
+    float4 gl_Position [[position]];
+};
+
+struct VS_in
+{
+    float4 in_var_POSITION [[attribute(0)]];
+    float2 in_var_TEXCOORD [[attribute(1)]];
+};
+
+vertex VS_out VS(VS_in in [[stage_in]], constant type_Globals& _Globals [[buffer(0)]])
+{
+    VS_out out = {};
+    out.gl_Position = _Globals.worldViewProj * in.in_var_POSITION;
+    out.out_var_TEXCOORD = in.in_var_TEXCOORD;
+    return out;
+}
+

@@ -14,3 +14,5 @@ src/LowLevelAPI/GeometryShader/bin
 src/LowLevelAPI/GeometryShader/obj
 src/LowLevelAPI/TextureCubeArray/bin
 src/LowLevelAPI/TextureCubeArray/obj
+src/LowLevelAPI/RenderToTexture/bin
+src/LowLevelAPI/RenderToTexture/obj

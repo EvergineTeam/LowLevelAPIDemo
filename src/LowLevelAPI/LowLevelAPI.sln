@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeometryShader", "GeometryS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextureCubeArray", "TextureCubeArray\TextureCubeArray.csproj", "{6115E672-B027-4E33-9466-80E6781FB854}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenderToTexture", "RenderToTexture\RenderToTexture.csproj", "{5428D28B-8829-4264-B896-AFE4A23FC330}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{6115E672-B027-4E33-9466-80E6781FB854}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6115E672-B027-4E33-9466-80E6781FB854}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6115E672-B027-4E33-9466-80E6781FB854}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5428D28B-8829-4264-B896-AFE4A23FC330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5428D28B-8829-4264-B896-AFE4A23FC330}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5428D28B-8829-4264-B896-AFE4A23FC330}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5428D28B-8829-4264-B896-AFE4A23FC330}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
