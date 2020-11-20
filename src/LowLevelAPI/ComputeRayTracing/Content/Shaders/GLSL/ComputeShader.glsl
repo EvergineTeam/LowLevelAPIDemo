@@ -1,0 +1,347 @@
+#version 310
+#ifdef GL_ARB_shading_language_420pack
+#extension GL_ARB_shading_language_420pack : require
+#endif
+#extension GL_ARB_compute_shader : require
+#extension GL_ARB_shader_image_load_store : require
+layout(local_size_x = 8, local_size_y = 8, local_size_z = 1) in;
+
+struct Sphere
+{
+    vec3 center;
+    float radius;
+};
+
+struct Material
+{
+    vec3 Albedo;
+    float RefIndex;
+    int Type;
+    uint padding0;
+    uint padding1;
+    uint padding2;
+};
+
+struct Camera
+{
+    vec3 Origin;
+    float LensRadius;
+    vec3 LowerLeftCorner;
+    uint Padding0;
+    vec3 Horizontal;
+    uint Padding1;
+    vec3 Vertical;
+    uint Padding2;
+    vec3 U;
+    uint Padding3;
+    vec3 V;
+    uint Padding4;
+    vec3 W;
+    uint Padding5;
+};
+
+struct ComputeData
+{
+    float time;
+    float width;
+    float height;
+    uint framecount;
+    uint samples;
+    uint recursion;
+    uint spherecount;
+    uint padding0;
+    Camera cam;
+};
+
+layout(binding = 60, std430) readonly buffer type_StructuredBuffer_Sphere
+{
+    Sphere _m0[];
+} Spheres;
+
+layout(binding = 61, std430) readonly buffer type_StructuredBuffer_Material
+{
+    Material _m0[];
+} Materials;
+
+layout(binding = 0, std140) uniform type_ParamsBuffer
+{
+    ComputeData data;
+} ParamsBuffer;
+
+layout(binding = 20, rgba32f) uniform writeonly image2D Output;
+
+void main()
+{
+    vec3 _98;
+    _98 = vec3(0.0);
+    vec3 _99;
+    uint _96;
+    for (uint _95 = (((gl_GlobalInvocationID.x * 1973u) + (gl_GlobalInvocationID.y * 9277u)) + (ParamsBuffer.data.framecount * 26699u)) | 1u, _100 = 0u; _100 < ParamsBuffer.data.samples; _95 = _96, _98 = _99, _100++)
+    {
+        uint _111 = ((_95 ^ 61u) ^ (_95 >> 16u)) * 9u;
+        uint _114 = (_111 ^ (_111 >> 4u)) * 668265261u;
+        uint _116 = _114 ^ (_114 >> 15u);
+        uint _127 = ((_116 ^ 61u) ^ (_116 >> 16u)) * 9u;
+        uint _130 = (_127 ^ (_127 >> 4u)) * 668265261u;
+        uint _132 = _130 ^ (_130 >> 15u);
+        uint _158 = ((_132 ^ 61u) ^ (_132 >> 16u)) * 9u;
+        uint _161 = (_158 ^ (_158 >> 4u)) * 668265261u;
+        uint _163 = _161 ^ (_161 >> 15u);
+        uint _169 = ((_163 ^ 61u) ^ (_163 >> 16u)) * 9u;
+        uint _172 = (_169 ^ (_169 >> 4u)) * 668265261u;
+        uint _174 = _172 ^ (_172 >> 15u);
+        uint _180 = ((_174 ^ 61u) ^ (_174 >> 16u)) * 9u;
+        uint _183 = (_180 ^ (_180 >> 4u)) * 668265261u;
+        uint _185 = _183 ^ (_183 >> 15u);
+        vec3 _190 = (vec3(float(_163) * 2.3283064365386962890625e-10, float(_174) * 2.3283064365386962890625e-10, float(_185) * 2.3283064365386962890625e-10) * vec3(2.0, 6.283185482025146484375, 1.0)) - vec3(1.0, 0.0, 0.0);
+        float _191 = _190.y;
+        float _197 = _190.x;
+        vec3 _206 = (vec3(vec2(sin(_191), cos(_191)) * sqrt(1.0 - (_197 * _197)), _197) * pow(_190.z, 0.3333333432674407958984375)) * ParamsBuffer.data.cam.LensRadius;
+        vec3 _211 = (ParamsBuffer.data.cam.U * _206.x) + (ParamsBuffer.data.cam.V * _206.y);
+        vec3 _223;
+        vec3 _225;
+        vec3 _227;
+        _223 = ParamsBuffer.data.cam.Origin + _211;
+        _225 = vec3(1.0);
+        _227 = (((ParamsBuffer.data.cam.LowerLeftCorner + (ParamsBuffer.data.cam.Horizontal * ((float(gl_GlobalInvocationID.x) + (float(_116) * 2.3283064365386962890625e-10)) / ParamsBuffer.data.width))) + (ParamsBuffer.data.cam.Vertical * (1.0 - ((float(gl_GlobalInvocationID.y) + (float(_132) * 2.3283064365386962890625e-10)) / ParamsBuffer.data.height)))) - ParamsBuffer.data.cam.Origin) - _211;
+        vec3 _226;
+        uint _221;
+        vec3 _224;
+        vec3 _228;
+        vec3 _506;
+        uint _220 = _185;
+        uint _229 = 0u;
+        for (;;)
+        {
+            if (_229 < ParamsBuffer.data.recursion)
+            {
+                uint _240;
+                vec3 _242;
+                vec3 _244;
+                bool _246;
+                _240 = 0u;
+                _242 = vec3(0.0);
+                _244 = vec3(0.0);
+                _246 = false;
+                float _238;
+                uint _241;
+                vec3 _243;
+                vec3 _245;
+                bool _247;
+                float _237 = 9999999.0;
+                uint _248 = 0u;
+                for (; _248 < ParamsBuffer.data.spherecount; _237 = _238, _240 = _241, _242 = _243, _244 = _245, _246 = _247, _248++)
+                {
+                    vec3 _301;
+                    float _302;
+                    vec3 _303;
+                    bool _304;
+                    switch (0u)
+                    {
+                        default:
+                        {
+                            vec3 _261 = _223 - Spheres._m0[_248].center;
+                            float _262 = dot(_227, _227);
+                            float _263 = dot(_261, _227);
+                            float _269 = (_263 * _263) - (_262 * (dot(_261, _261) - (Spheres._m0[_248].radius * Spheres._m0[_248].radius)));
+                            float _270 = sqrt(_269);
+                            if (_269 > 0.0)
+                            {
+                                float _290 = ((-_263) - _270) / _262;
+                                if ((_290 < _237) && (_290 > 0.001000000047497451305389404296875))
+                                {
+                                    vec3 _297 = _223 + (_227 * _290);
+                                    _301 = _297;
+                                    _302 = _290;
+                                    _303 = (_297 - Spheres._m0[_248].center) / vec3(Spheres._m0[_248].radius);
+                                    _304 = true;
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                float _277 = ((-_263) + _270) / _262;
+                                if ((_277 < _237) && (_277 > 0.001000000047497451305389404296875))
+                                {
+                                    vec3 _284 = _223 + (_227 * _277);
+                                    _301 = _284;
+                                    _302 = _277;
+                                    _303 = (_284 - Spheres._m0[_248].center) / vec3(Spheres._m0[_248].radius);
+                                    _304 = true;
+                                    break;
+                                }
+                            }
+                            _301 = vec3(0.0);
+                            _302 = 0.0;
+                            _303 = vec3(0.0);
+                            _304 = false;
+                            break;
+                        }
+                    }
+                    _238 = _304 ? _302 : _237;
+                    _241 = _304 ? _248 : _240;
+                    bvec3 _305 = bvec3(_304);
+                    _243 = vec3(_305.x ? _301.x : _242.x, _305.y ? _301.y : _242.y, _305.z ? _301.z : _242.z);
+                    _245 = vec3(_305.x ? _303.x : _244.x, _305.y ? _303.y : _244.y, _305.z ? _303.z : _244.z);
+                    _247 = _304 ? true : _246;
+                }
+                if (_246)
+                {
+                    vec3 _502;
+                    bool _503;
+                    switch (Materials._m0[_240].Type)
+                    {
+                        case 0:
+                        {
+                            uint _453 = ((_220 ^ 61u) ^ (_220 >> 16u)) * 9u;
+                            uint _456 = (_453 ^ (_453 >> 4u)) * 668265261u;
+                            uint _458 = _456 ^ (_456 >> 15u);
+                            uint _464 = ((_458 ^ 61u) ^ (_458 >> 16u)) * 9u;
+                            uint _467 = (_464 ^ (_464 >> 4u)) * 668265261u;
+                            uint _469 = _467 ^ (_467 >> 15u);
+                            uint _475 = ((_469 ^ 61u) ^ (_469 >> 16u)) * 9u;
+                            uint _478 = (_475 ^ (_475 >> 4u)) * 668265261u;
+                            uint _480 = _478 ^ (_478 >> 15u);
+                            vec3 _485 = (vec3(float(_458) * 2.3283064365386962890625e-10, float(_469) * 2.3283064365386962890625e-10, float(_480) * 2.3283064365386962890625e-10) * vec3(2.0, 6.283185482025146484375, 1.0)) - vec3(1.0, 0.0, 0.0);
+                            float _486 = _485.y;
+                            float _492 = _485.x;
+                            _221 = _480;
+                            _224 = _242;
+                            _228 = _244 + (vec3(vec2(sin(_486), cos(_486)) * sqrt(1.0 - (_492 * _492)), _492) * pow(_485.z, 0.3333333432674407958984375));
+                            _502 = Materials._m0[_240].Albedo;
+                            _503 = true;
+                            break;
+                        }
+                        case 1:
+                        {
+                            uint _398 = ((_220 ^ 61u) ^ (_220 >> 16u)) * 9u;
+                            uint _401 = (_398 ^ (_398 >> 4u)) * 668265261u;
+                            uint _403 = _401 ^ (_401 >> 15u);
+                            uint _409 = ((_403 ^ 61u) ^ (_403 >> 16u)) * 9u;
+                            uint _412 = (_409 ^ (_409 >> 4u)) * 668265261u;
+                            uint _414 = _412 ^ (_412 >> 15u);
+                            uint _420 = ((_414 ^ 61u) ^ (_414 >> 16u)) * 9u;
+                            uint _423 = (_420 ^ (_420 >> 4u)) * 668265261u;
+                            uint _425 = _423 ^ (_423 >> 15u);
+                            vec3 _430 = (vec3(float(_403) * 2.3283064365386962890625e-10, float(_414) * 2.3283064365386962890625e-10, float(_425) * 2.3283064365386962890625e-10) * vec3(2.0, 6.283185482025146484375, 1.0)) - vec3(1.0, 0.0, 0.0);
+                            float _431 = _430.y;
+                            float _437 = _430.x;
+                            vec3 _447 = reflect(normalize(_227), _244) + ((vec3(vec2(sin(_431), cos(_431)) * sqrt(1.0 - (_437 * _437)), _437) * pow(_430.z, 0.3333333432674407958984375)) * Materials._m0[_240].RefIndex);
+                            _221 = _425;
+                            _224 = _242;
+                            _228 = _447;
+                            _502 = Materials._m0[_240].Albedo;
+                            _503 = dot(_447, _244) > 0.0;
+                            break;
+                        }
+                        case 2:
+                        {
+                            float _328 = dot(_227, _244);
+                            float _340;
+                            vec3 _341;
+                            if (_328 > 0.0)
+                            {
+                                _340 = (Materials._m0[_240].RefIndex * _328) / length(_227);
+                                _341 = -_244;
+                            }
+                            else
+                            {
+                                _340 = (-_328) / length(_227);
+                                _341 = _244;
+                            }
+                            vec3 _361;
+                            bool _362;
+                            switch (0u)
+                            {
+                                default:
+                                {
+                                    vec3 _344 = normalize(_227);
+                                    float _345 = dot(_344, _341);
+                                    float _350 = 1.0 - ((Materials._m0[_240].RefIndex * Materials._m0[_240].RefIndex) * (1.0 - (_345 * _345)));
+                                    if (_350 > 0.0)
+                                    {
+                                        _361 = ((_344 - (_341 * _345)) * Materials._m0[_240].RefIndex) - (_341 * sqrt(_350));
+                                        _362 = true;
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        _361 = vec3(0.0);
+                                        _362 = false;
+                                        break;
+                                    }
+                                }
+                            }
+                            float _375;
+                            if (_362)
+                            {
+                                float _368 = (1.0 - Materials._m0[_240].RefIndex) / (1.0 + Materials._m0[_240].RefIndex);
+                                float _369 = _368 * _368;
+                                _375 = _369 + ((1.0 - _369) * pow(1.0 - _340, 5.0));
+                            }
+                            else
+                            {
+                                _375 = 1.0;
+                            }
+                            uint _379 = ((_220 ^ 61u) ^ (_220 >> 16u)) * 9u;
+                            uint _382 = (_379 ^ (_379 >> 4u)) * 668265261u;
+                            uint _384 = _382 ^ (_382 >> 15u);
+                            vec3 _392;
+                            if ((float(_384) * 2.3283064365386962890625e-10) < _375)
+                            {
+                                _392 = reflect(_227, _244);
+                            }
+                            else
+                            {
+                                _392 = _361;
+                            }
+                            _221 = _384;
+                            _224 = _242;
+                            _228 = _392;
+                            _502 = vec3(1.0);
+                            _503 = true;
+                            break;
+                        }
+                        default:
+                        {
+                            _221 = _220;
+                            _224 = vec3(0.0);
+                            _228 = vec3(0.0);
+                            _502 = vec3(0.0);
+                            _503 = false;
+                            break;
+                        }
+                    }
+                    if (!_503)
+                    {
+                        _96 = _221;
+                        _506 = _225;
+                        break;
+                    }
+                    _226 = _225 * _502;
+                }
+                else
+                {
+                    _96 = _220;
+                    _506 = _225 * mix(vec3(1.0), vec3(0.5, 0.699999988079071044921875, 1.0), vec3((0.5 * normalize(_227).y) + 0.5));
+                    break;
+                }
+                _220 = _221;
+                _223 = _224;
+                _225 = _226;
+                _227 = _228;
+                _229++;
+                continue;
+            }
+            else
+            {
+                _96 = _220;
+                _506 = vec3(0.0);
+                break;
+            }
+        }
+        _99 = _98 + _506;
+    }
+    imageStore(Output, ivec2(gl_GlobalInvocationID.xy), vec4(_98 / vec3(float(ParamsBuffer.data.samples)), 1.0));
+}
+

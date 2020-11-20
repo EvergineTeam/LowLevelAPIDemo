@@ -20,3 +20,5 @@ src/LowLevelAPI/DrawInstancingIndirect/bin
 src/LowLevelAPI/DrawInstancingIndirect/obj
 src/LowLevelAPI/ComputeTexture/bin
 src/LowLevelAPI/ComputeTexture/obj
+src/LowLevelAPI/ComputeRayTracing/bin
+src/LowLevelAPI/ComputeRayTracing/obj

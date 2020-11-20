@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawInstancingIndirect", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputeTexture", "ComputeTexture\ComputeTexture.csproj", "{5068C0D3-C454-4CCC-A6F1-72BAC0BDD7C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputeRayTracing", "ComputeRayTracing\ComputeRayTracing.csproj", "{76C55C86-5248-4C67-B69E-54027181DB89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{5068C0D3-C454-4CCC-A6F1-72BAC0BDD7C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5068C0D3-C454-4CCC-A6F1-72BAC0BDD7C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5068C0D3-C454-4CCC-A6F1-72BAC0BDD7C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76C55C86-5248-4C67-B69E-54027181DB89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76C55C86-5248-4C67-B69E-54027181DB89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76C55C86-5248-4C67-B69E-54027181DB89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76C55C86-5248-4C67-B69E-54027181DB89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
