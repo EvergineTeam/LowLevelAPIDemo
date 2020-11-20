@@ -16,3 +16,5 @@ src/LowLevelAPI/TextureCubeArray/bin
 src/LowLevelAPI/TextureCubeArray/obj
 src/LowLevelAPI/RenderToTexture/bin
 src/LowLevelAPI/RenderToTexture/obj
+src/LowLevelAPI/DrawInstancingIndirect/bin
+src/LowLevelAPI/DrawInstancingIndirect/obj
