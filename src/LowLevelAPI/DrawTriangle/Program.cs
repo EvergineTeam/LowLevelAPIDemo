@@ -31,7 +31,7 @@ namespace DrawTriangle
                 var swapChainDescriptor = test.CreateSwapChainDescription(window.Width, window.Height);
                 swapChainDescriptor.SurfaceInfo = window.SurfaceInfo;
 
-                var graphicsContext = test.CreateGraphicsContext(swapChainDescriptor, GraphicsBackend.OpenGL);
+                var graphicsContext = test.CreateGraphicsContext(swapChainDescriptor, GraphicsBackend.DirectX11);
                 windowsTitle = $"{windowsTitle} [{graphicsContext.BackendType}]";
 
                 test.Run();
