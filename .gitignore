@@ -18,3 +18,5 @@ src/LowLevelAPI/RenderToTexture/bin
 src/LowLevelAPI/RenderToTexture/obj
 src/LowLevelAPI/DrawInstancingIndirect/bin
 src/LowLevelAPI/DrawInstancingIndirect/obj
+src/LowLevelAPI/ComputeTexture/bin
+src/LowLevelAPI/ComputeTexture/obj

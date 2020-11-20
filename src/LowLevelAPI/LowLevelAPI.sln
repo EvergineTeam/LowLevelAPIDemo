@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenderToTexture", "RenderTo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawInstancingIndirect", "DrawInstancingIndirect\DrawInstancingIndirect.csproj", "{B7BA7386-5006-4E48-924C-4959BCDBF9A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputeTexture", "ComputeTexture\ComputeTexture.csproj", "{5068C0D3-C454-4CCC-A6F1-72BAC0BDD7C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{B7BA7386-5006-4E48-924C-4959BCDBF9A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7BA7386-5006-4E48-924C-4959BCDBF9A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7BA7386-5006-4E48-924C-4959BCDBF9A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5068C0D3-C454-4CCC-A6F1-72BAC0BDD7C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5068C0D3-C454-4CCC-A6F1-72BAC0BDD7C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5068C0D3-C454-4CCC-A6F1-72BAC0BDD7C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5068C0D3-C454-4CCC-A6F1-72BAC0BDD7C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
