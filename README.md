@@ -11,25 +11,25 @@ Set of samples using the Low Level abstraction API over Vulkan, DirectX, OpenGL,
 ![alt Screenshot2](https://github.com/WaveEngine/LowLevelAPIDemo/blob/main/Captures/Capture7.PNG)
 
 ## Stencil outline
-![alt Screenshot2](https://github.com/WaveEngine/LowLevelAPIDemo/blob/main/Captures/Capture8.PNG)
+![alt Screenshot3](https://github.com/WaveEngine/LowLevelAPIDemo/blob/main/Captures/Capture8.PNG)
 
 ## Geometry Shader
-![alt Screenshot2](https://github.com/WaveEngine/LowLevelAPIDemo/blob/main/Captures/Capture4.PNG)
+![alt Screenshot4](https://github.com/WaveEngine/LowLevelAPIDemo/blob/main/Captures/Capture4.PNG)
 
 ## Texture Cube Array
-![alt Screenshot2](https://github.com/WaveEngine/LowLevelAPIDemo/blob/main/Captures/Capture1.PNG)
+![alt Screenshot5](https://github.com/WaveEngine/LowLevelAPIDemo/blob/main/Captures/Capture1.PNG)
 
 ## Render to Texture
-![alt Screenshot2](https://github.com/WaveEngine/LowLevelAPIDemo/blob/main/Captures/Capture5.PNG)
+![alt Screenshot6](https://github.com/WaveEngine/LowLevelAPIDemo/blob/main/Captures/Capture5.PNG)
 
 ## Draw Instance Indirect
-![alt Screenshot2](https://github.com/WaveEngine/LowLevelAPIDemo/blob/main/Captures/Capture6.PNG)
+![alt Screenshot7](https://github.com/WaveEngine/LowLevelAPIDemo/blob/main/Captures/Capture6.PNG)
 
 ## Compute Texture
-![alt Screenshot2](https://github.com/WaveEngine/LowLevelAPIDemo/blob/main/Captures/Capture9.png)
+![alt Screenshot8](https://github.com/WaveEngine/LowLevelAPIDemo/blob/main/Captures/Capture9.png)
 
 ## Compute Raytracing shader
-![alt Screenshot2](https://github.com/WaveEngine/LowLevelAPIDemo/blob/main/Captures/Capture0.PNG)
+![alt Screenshot9](https://github.com/WaveEngine/LowLevelAPIDemo/blob/main/Captures/Capture0.PNG)
 
 
 ## Build and Test
