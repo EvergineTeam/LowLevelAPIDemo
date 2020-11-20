@@ -121,7 +121,7 @@ namespace Texture2DArray
 
             commandBuffer.Begin();
 
-            RenderPassDescription renderPassDescription = new RenderPassDescription(this.frameBuffer, new ClearValue(ClearFlags.Target, Color.CornflowerBlue));
+            RenderPassDescription renderPassDescription = new RenderPassDescription(this.frameBuffer, new ClearValue(ClearFlags.All, 1, 0, Color.CornflowerBlue));
             commandBuffer.BeginRenderPass(ref renderPassDescription);
 
             commandBuffer.SetViewports(this.viewports);

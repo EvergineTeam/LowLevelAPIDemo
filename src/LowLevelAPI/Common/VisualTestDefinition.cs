@@ -88,7 +88,7 @@ namespace Common
             this.graphicsContext.DefaultTextureUploaderSize = 128 * 1024 * 1024;
             this.graphicsContext.DefaultBufferUploaderSize = 64 * 1024 * 1024;
 #if DEBUG
-            this.graphicsContext.CreateDevice(new ValidationLayer(ValidationLayer.NotifyMethod.Exceptions));
+            this.graphicsContext.CreateDevice(new ValidationLayer(ValidationLayer.NotifyMethod.Trace));
 #else
             this.graphicsContext.CreateDevice();
 #endif
