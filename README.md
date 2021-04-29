@@ -37,7 +37,7 @@ Set of samples using the Low Level abstraction API over Vulkan, DirectX, OpenGL,
 Required Visual Studio 16.8 with .NET5 support
 
 ----
-Powered by **[WaveEngine 3.1](http://www.waveengine.net)**
+Powered by **[WaveEngine 3.2](http://www.waveengine.net)**
 
 LET'S CONNECT!
 
