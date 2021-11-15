@@ -1,9 +1,9 @@
 ﻿using Common;
 using System;
-using WaveEngine.Common.Graphics;
-using WaveEngine.Mathematics;
-using Buffer = WaveEngine.Common.Graphics.Buffer;
-using WaveEngine.Common.Graphics.VertexFormats;
+using Evergine.Common.Graphics;
+using Evergine.Mathematics;
+using Buffer = Evergine.Common.Graphics.Buffer;
+using Evergine.Common.Graphics.VertexFormats;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 

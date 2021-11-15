@@ -2,7 +2,7 @@
 
 using System.Runtime.InteropServices;
 
-namespace WaveEngine.Assets.Extensions.KTX
+namespace Evergine.Assets.Extensions.KTX
 {
     /// <summary>
     /// KTX header description.

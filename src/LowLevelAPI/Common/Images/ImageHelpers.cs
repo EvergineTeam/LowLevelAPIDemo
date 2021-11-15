@@ -3,7 +3,7 @@
 using System;
 using System.IO;
 using System.Runtime.CompilerServices;
-using WaveEngine.Common.Graphics;
+using Evergine.Common.Graphics;
 
 #if IOS
 using System.Drawing;
@@ -12,7 +12,7 @@ using Foundation;
 using CoreGraphics;
 #endif
 
-namespace WaveEngine.Framework.Assets.Extensions
+namespace Evergine.Framework.Assets.Extensions
 {
     public static class ImageHelpers
     {

@@ -1,6 +1,6 @@
 ﻿// Copyright © 2019 Wave Engine S.L. All rights reserved. Use is subject to license terms.
 
-namespace WaveEngine.Framework.Assets.Extensions
+namespace Evergine.Framework.Assets.Extensions
 {
     public struct ImageMipInfo
     {

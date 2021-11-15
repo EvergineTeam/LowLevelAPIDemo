@@ -4,9 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using WaveEngine.Framework.Assets.Extensions;
+using Evergine.Framework.Assets.Extensions;
 
-namespace WaveEngine.Assets.Extensions.KTX
+namespace Evergine.Assets.Extensions.KTX
 {
     /// <summary>
     /// https://www.khronos.org/opengles/sdk/tools/KTX/file_format_spec.

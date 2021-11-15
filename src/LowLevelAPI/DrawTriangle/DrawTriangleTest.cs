@@ -1,9 +1,9 @@
 ﻿using Common;
 using System;
 using System.Runtime.CompilerServices;
-using WaveEngine.Common.Graphics;
-using WaveEngine.Mathematics;
-using Buffer = WaveEngine.Common.Graphics.Buffer;
+using Evergine.Common.Graphics;
+using Evergine.Mathematics;
+using Buffer = Evergine.Common.Graphics.Buffer;
 
 namespace DrawTriangle
 {

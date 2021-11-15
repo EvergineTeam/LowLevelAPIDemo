@@ -26,9 +26,9 @@ freely, subject to the following restrictions:
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
-using WaveEngine.Framework.Assets.Extensions;
+using Evergine.Framework.Assets.Extensions;
 
-namespace WaveEngine.Assets.Extensions.DDS
+namespace Evergine.Assets.Extensions.DDS
 {
     internal class DdsTexture
     {

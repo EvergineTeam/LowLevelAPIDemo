@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Reflection;
-using WaveEngine.Common.Audio;
-using WaveEngine.Common.Graphics;
-using WaveEngine.Platform;
-using static WaveEngine.Common.Graphics.SurfaceInfo;
+using Evergine.Common.Audio;
+using Evergine.Common.Graphics;
+using Evergine.Platform;
+using static Evergine.Common.Graphics.SurfaceInfo;
 
 namespace Common
 {
@@ -56,7 +56,7 @@ namespace Common
         public void Initialize()
         {
             this.assetsDirectory = new AssetsDirectory(this.assetsRootPath);
-            this.windowSystem = GetInstance<WindowsSystem>("WaveEngine.SDL", "SDLWindowsSystem");
+            this.windowSystem = GetInstance<WindowsSystem>("Evergine.SDL", "SDLWindowsSystem");
         }
 
         public GraphicsContext CreateGraphicsContext(SwapChainDescription? swapChainDescriptor = null, GraphicsBackend? prefferedBackend = null)
@@ -65,21 +65,21 @@ namespace Common
             switch (prefferedBackend)
             {
                 case GraphicsBackend.DirectX11:
-                    this.graphicsContext = this.GetInstance<GraphicsContext>("WaveEngine.DirectX11", "DX11GraphicsContext");
+                    this.graphicsContext = this.GetInstance<GraphicsContext>("Evergine.DirectX11", "DX11GraphicsContext");
                     break;
                 case GraphicsBackend.DirectX12:
-                    this.graphicsContext = this.GetInstance<GraphicsContext>("WaveEngine.DirectX12", "DX12GraphicsContext");
+                    this.graphicsContext = this.GetInstance<GraphicsContext>("Evergine.DirectX12", "DX12GraphicsContext");
                     break;
                 case GraphicsBackend.OpenGL:
                 case GraphicsBackend.OpenGLES:
                 case GraphicsBackend.WebGL2:
-                    this.graphicsContext = this.GetInstance<GraphicsContext>("WaveEngine.OpenGL", "GLGraphicsContext");
+                    this.graphicsContext = this.GetInstance<GraphicsContext>("Evergine.OpenGL", "GLGraphicsContext");
                     break;
                 case GraphicsBackend.Vulkan:
-                    this.graphicsContext = this.GetInstance<GraphicsContext>("WaveEngine.Vulkan", "VKGraphicsContext");
+                    this.graphicsContext = this.GetInstance<GraphicsContext>("Evergine.Vulkan", "VKGraphicsContext");
                     break;
                 case GraphicsBackend.Metal:
-                    this.graphicsContext = this.GetInstance<GraphicsContext>("WaveEngine.Metal", "MTLGraphicsContext");
+                    this.graphicsContext = this.GetInstance<GraphicsContext>("Evergine.Metal", "MTLGraphicsContext");
                     break;
                 default:
                     throw new InvalidOperationException("Invalid render backend");

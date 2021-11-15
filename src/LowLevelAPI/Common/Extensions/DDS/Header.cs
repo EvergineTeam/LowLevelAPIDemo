@@ -25,7 +25,7 @@ freely, subject to the following restrictions:
 
 using System.Runtime.InteropServices;
 
-namespace WaveEngine.Assets.Extensions.DDS
+namespace Evergine.Assets.Extensions.DDS
 {
     [StructLayout(LayoutKind.Sequential, Pack = 4, Size = 124)]
     internal struct Header

@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using WaveEngine.Common.Graphics;
-using WaveEngine.Common.Graphics.VertexFormats;
-using WaveEngine.Mathematics;
-using Buffer = WaveEngine.Common.Graphics.Buffer;
+using Evergine.Common.Graphics;
+using Evergine.Common.Graphics.VertexFormats;
+using Evergine.Mathematics;
+using Buffer = Evergine.Common.Graphics.Buffer;
 
 namespace TextureCubeArray
 {

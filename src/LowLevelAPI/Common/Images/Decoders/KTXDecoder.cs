@@ -2,9 +2,9 @@
 
 using System;
 using System.IO;
-using WaveEngine.Assets.Extensions.KTX;
-using WaveEngine.Common.Graphics;
-using WaveEngine.Framework.Assets.Extensions;
+using Evergine.Assets.Extensions.KTX;
+using Evergine.Common.Graphics;
+using Evergine.Framework.Assets.Extensions;
 
 namespace VisualTests.LowLevel.Images
 {

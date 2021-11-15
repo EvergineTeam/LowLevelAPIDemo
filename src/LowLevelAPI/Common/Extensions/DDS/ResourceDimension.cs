@@ -23,7 +23,7 @@ freely, subject to the following restrictions:
    distribution.
 */
 
-namespace WaveEngine.Assets.Extensions.DDS
+namespace Evergine.Assets.Extensions.DDS
 {
     internal enum ResourceDimension : uint
     {

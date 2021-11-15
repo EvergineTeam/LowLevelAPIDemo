@@ -2,7 +2,7 @@
 
 using System;
 
-namespace WaveEngine.Assets.Extensions.KTX
+namespace Evergine.Assets.Extensions.KTX
 {
     /// <summary>
     /// Helper class.
@@ -10,276 +10,276 @@ namespace WaveEngine.Assets.Extensions.KTX
     internal class SupportedFormats
     {
         /// <summary>
-        /// Convert from KTX format to WaveEngine format.
+        /// Convert from KTX format to Evergine format.
         /// </summary>
         /// <param name="header">The KTX header.</param>
-        /// <returns>The WaveEngine format if this exists.</returns>
-        public static WaveEngine.Common.Graphics.PixelFormat FromOpenGLFormat(ref KTXHeader header)
+        /// <returns>The Evergine format if this exists.</returns>
+        public static Evergine.Common.Graphics.PixelFormat FromOpenGLFormat(ref KTXHeader header)
         {
             if ((PixelFormat)header.glFormat == PixelFormat.Rgba
                 && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Rgba32f)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R32G32B32A32_Float;
+                return Evergine.Common.Graphics.PixelFormat.R32G32B32A32_Float;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.RgbaInteger
                 && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Rgba32ui)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R32G32B32A32_UInt;
+                return Evergine.Common.Graphics.PixelFormat.R32G32B32A32_UInt;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.RgbaInteger
                && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Rgba32i)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R32G32B32A32_SInt;
+                return Evergine.Common.Graphics.PixelFormat.R32G32B32A32_SInt;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.RgbaInteger
                && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Rgb32f)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R32G32B32_Float;
+                return Evergine.Common.Graphics.PixelFormat.R32G32B32_Float;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.RgbaInteger
                && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Rgb32ui)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R32G32B32_UInt;
+                return Evergine.Common.Graphics.PixelFormat.R32G32B32_UInt;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.RgbInteger
                && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Rgb32i)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R32G32B32_SInt;
+                return Evergine.Common.Graphics.PixelFormat.R32G32B32_SInt;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.Rgba
                && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Rgba16f)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R16G16B16A16_Float;
+                return Evergine.Common.Graphics.PixelFormat.R16G16B16A16_Float;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.RgbaInteger
                && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Rgba16ui)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R16G16B16A16_UInt;
+                return Evergine.Common.Graphics.PixelFormat.R16G16B16A16_UInt;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.RgbaInteger
                && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Rgba16i)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R16G16B16A16_SInt;
+                return Evergine.Common.Graphics.PixelFormat.R16G16B16A16_SInt;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.Rg
                && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Rg32f)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R32G32_Float;
+                return Evergine.Common.Graphics.PixelFormat.R32G32_Float;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.RgInteger
                && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Rg32ui)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R32G32_UInt;
+                return Evergine.Common.Graphics.PixelFormat.R32G32_UInt;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.RgInteger
                 && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Rg32i)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R32G32_SInt;
+                return Evergine.Common.Graphics.PixelFormat.R32G32_SInt;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.Rgba
                 && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Rgb10A2)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R10G10B10A2_UNorm;
+                return Evergine.Common.Graphics.PixelFormat.R10G10B10A2_UNorm;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.Rgb
                 && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.R11fG11fB10f)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R11G11B10_Float;
+                return Evergine.Common.Graphics.PixelFormat.R11G11B10_Float;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.Rgba
                 && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Rgba8)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R8G8B8A8_UNorm;
+                return Evergine.Common.Graphics.PixelFormat.R8G8B8A8_UNorm;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.Rgba
                  && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Srgb8Alpha8)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R8G8B8A8_UNorm_SRgb;
+                return Evergine.Common.Graphics.PixelFormat.R8G8B8A8_UNorm_SRgb;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.Rg
                   && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Rg16f)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R16G16_Float;
+                return Evergine.Common.Graphics.PixelFormat.R16G16_Float;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.RgInteger
                   && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Rg16ui)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R16G16_UInt;
+                return Evergine.Common.Graphics.PixelFormat.R16G16_UInt;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.RgInteger
                   && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Rg16i)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R16G16_SInt;
+                return Evergine.Common.Graphics.PixelFormat.R16G16_SInt;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.DepthComponent
                   && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.DepthComponent32f)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.D32_Float;
+                return Evergine.Common.Graphics.PixelFormat.D32_Float;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.Red
                   && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.R32f)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R32_Float;
+                return Evergine.Common.Graphics.PixelFormat.R32_Float;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.RedInteger
                   && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.R32ui)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R32_UInt;
+                return Evergine.Common.Graphics.PixelFormat.R32_UInt;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.RedInteger
                   && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.R32i)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R32_SInt;
+                return Evergine.Common.Graphics.PixelFormat.R32_SInt;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.DepthStencil
                   && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Depth24Stencil8)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.D24_UNorm_S8_UInt;
+                return Evergine.Common.Graphics.PixelFormat.D24_UNorm_S8_UInt;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.Red
                   && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.R16f)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R16_Float;
+                return Evergine.Common.Graphics.PixelFormat.R16_Float;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.DepthComponent
                   && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.DepthComponent16)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.D16_UNorm;
+                return Evergine.Common.Graphics.PixelFormat.D16_UNorm;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.RedInteger
                   && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.R16ui)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R16_UInt;
+                return Evergine.Common.Graphics.PixelFormat.R16_UInt;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.RedInteger
                   && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.R16i)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R16_SInt;
+                return Evergine.Common.Graphics.PixelFormat.R16_SInt;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.Luminance
                   && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Luminance)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R8_UNorm;
+                return Evergine.Common.Graphics.PixelFormat.R8_UNorm;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.LuminanceAlpha
                   && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.LuminanceAlpha)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R8G8_UNorm;
+                return Evergine.Common.Graphics.PixelFormat.R8G8_UNorm;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.Alpha
                   && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Alpha)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.A8_UNorm;
+                return Evergine.Common.Graphics.PixelFormat.A8_UNorm;
             }
             else if (header.glFormat == 0
                   && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.CompressedRgbS3tcDxt1Ext)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.BC1_UNorm_SRgb;
+                return Evergine.Common.Graphics.PixelFormat.BC1_UNorm_SRgb;
             }
             else if (header.glFormat == 0
                   && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.CompressedRgbaS3tcDxt1Ext)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.BC1_UNorm;
+                return Evergine.Common.Graphics.PixelFormat.BC1_UNorm;
             }
             else if (header.glFormat == 0
                   && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.CompressedSrgbAlphaS3tcDxt1Ext)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.BC1_UNorm_SRgb;
+                return Evergine.Common.Graphics.PixelFormat.BC1_UNorm_SRgb;
             }
             else if (header.glFormat == 0
                   && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.CompressedRgbaS3tcDxt3Ext)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.BC2_UNorm;
+                return Evergine.Common.Graphics.PixelFormat.BC2_UNorm;
             }
             else if (header.glFormat == 0
                    && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.CompressedSrgbAlphaS3tcDxt3Ext)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.BC2_UNorm_SRgb;
+                return Evergine.Common.Graphics.PixelFormat.BC2_UNorm_SRgb;
             }
             else if (header.glFormat == 0
                     && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.CompressedRgbaS3tcDxt5Ext)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.BC3_UNorm;
+                return Evergine.Common.Graphics.PixelFormat.BC3_UNorm;
             }
             else if (header.glFormat == 0
                     && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.CompressedSrgbAlphaS3tcDxt5Ext)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.BC3_UNorm_SRgb;
+                return Evergine.Common.Graphics.PixelFormat.BC3_UNorm_SRgb;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.Bgra
                     && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Rgba)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.B8G8R8A8_UNorm;
+                return Evergine.Common.Graphics.PixelFormat.B8G8R8A8_UNorm;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.Bgra
                     && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.Srgb8Alpha8)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.B8G8R8A8_UNorm_SRgb;
+                return Evergine.Common.Graphics.PixelFormat.B8G8R8A8_UNorm_SRgb;
             }
             else if ((PixelFormat)header.glFormat == PixelFormat.Red
                     && (PixelInternalFormat)header.glInternalFormat == PixelInternalFormat.R16ui)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.R16_UNorm;
+                return Evergine.Common.Graphics.PixelFormat.R16_UNorm;
             }
             else if (header.glFormat == 0
                     && header.glInternalFormat == 36196)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.ETC1_RGB8;
+                return Evergine.Common.Graphics.PixelFormat.ETC1_RGB8;
             }
             else if (header.glFormat == 0
                     && (CompressedInternalFormat)header.glInternalFormat == CompressedInternalFormat.Etc1Rgb8Oes)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.ETC2_RGBA;
+                return Evergine.Common.Graphics.PixelFormat.ETC2_RGBA;
             }
             else if (header.glFormat == 0
                     && (CompressedInternalFormat)header.glInternalFormat == CompressedInternalFormat.CompressedRgba8Etc2Eac)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.ETC2_RGBA;
+                return Evergine.Common.Graphics.PixelFormat.ETC2_RGBA;
             }
             else if (header.glFormat == 0
                     && (CompressedInternalFormat)header.glInternalFormat == CompressedInternalFormat.CompressedSrgb8Alpha8Etc2Eac)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.ETC2_RGBA_SRGB;
+                return Evergine.Common.Graphics.PixelFormat.ETC2_RGBA_SRGB;
             }
             else if (header.glFormat == 0
                     && (ImgTextureCompressionPvrtc)header.glInternalFormat == ImgTextureCompressionPvrtc.CompressedRgbPvrtc2Bppv1Img)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.PVRTC_2BPP_RGB;
+                return Evergine.Common.Graphics.PixelFormat.PVRTC_2BPP_RGB;
             }
             else if (header.glFormat == 0
                     && (ImgTextureCompressionPvrtc)header.glInternalFormat == ImgTextureCompressionPvrtc.CompressedRgbPvrtc4Bppv1Img)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.PVRTC_4BPP_RGB;
+                return Evergine.Common.Graphics.PixelFormat.PVRTC_4BPP_RGB;
             }
             else if (header.glFormat == 0
                     && (ImgTextureCompressionPvrtc)header.glInternalFormat == ImgTextureCompressionPvrtc.CompressedRgbaPvrtc2Bppv1Img)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.PVRTC_2BPP_RGBA;
+                return Evergine.Common.Graphics.PixelFormat.PVRTC_2BPP_RGBA;
             }
             else if (header.glFormat == 0
                   && (ImgTextureCompressionPvrtc)header.glInternalFormat == ImgTextureCompressionPvrtc.CompressedRgbaPvrtc4Bppv1Img)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.PVRTC_4BPP_RGBA;
+                return Evergine.Common.Graphics.PixelFormat.PVRTC_4BPP_RGBA;
             }
             else if (header.glFormat == 0
                  && (ExtPvrtcSrgb)header.glInternalFormat == ExtPvrtcSrgb.CompressedSrgbPvrtc2Bppv1Ext)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.PVRTC_2BPP_RGB_SRGB;
+                return Evergine.Common.Graphics.PixelFormat.PVRTC_2BPP_RGB_SRGB;
             }
             else if (header.glFormat == 0
                  && (ExtPvrtcSrgb)header.glInternalFormat == ExtPvrtcSrgb.CompressedSrgbPvrtc4Bppv1Ext)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.PVRTC_4BPP_RGB_SRGB;
+                return Evergine.Common.Graphics.PixelFormat.PVRTC_4BPP_RGB_SRGB;
             }
             else if (header.glFormat == 0
                  && (ExtPvrtcSrgb)header.glInternalFormat == ExtPvrtcSrgb.CompressedSrgbAlphaPvrtc2Bppv1Ext)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.PVRTC_2BPP_RGBA_SRGBA;
+                return Evergine.Common.Graphics.PixelFormat.PVRTC_2BPP_RGBA_SRGBA;
             }
             else if (header.glFormat == 0
                  && (ExtPvrtcSrgb)header.glInternalFormat == ExtPvrtcSrgb.CompressedSrgbAlphaPvrtc4Bppv1Ext)
             {
-                return WaveEngine.Common.Graphics.PixelFormat.PVRTC_4BPP_RGBA_SRGBA;
+                return Evergine.Common.Graphics.PixelFormat.PVRTC_4BPP_RGBA_SRGBA;
             }
             else
             {

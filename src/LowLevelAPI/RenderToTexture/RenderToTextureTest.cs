@@ -1,10 +1,10 @@
 ﻿using Common;
 using System;
 using System.Runtime.CompilerServices;
-using WaveEngine.Common.Graphics;
-using WaveEngine.Common.Graphics.VertexFormats;
-using WaveEngine.Mathematics;
-using Buffer = WaveEngine.Common.Graphics.Buffer;
+using Evergine.Common.Graphics;
+using Evergine.Common.Graphics.VertexFormats;
+using Evergine.Mathematics;
+using Buffer = Evergine.Common.Graphics.Buffer;
 
 namespace RenderToTexture
 {

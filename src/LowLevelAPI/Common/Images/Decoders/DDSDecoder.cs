@@ -3,9 +3,9 @@
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
-using WaveEngine.Assets.Extensions.DDS;
-using WaveEngine.Common.Graphics;
-using WaveEngine.Framework.Assets.Extensions;
+using Evergine.Assets.Extensions.DDS;
+using Evergine.Common.Graphics;
+using Evergine.Framework.Assets.Extensions;
 
 namespace VisualTests.LowLevel.Images
 {
@@ -112,7 +112,7 @@ namespace VisualTests.LowLevel.Images
                 MipLevels = header.MipMapCount == 0 ? 1 : header.MipMapCount,
                 ArraySize = headerDX10.ArraySize == 0 ? 1 : headerDX10.ArraySize,
                 Faces = faces,
-                pixelFormat = (WaveEngine.Common.Graphics.PixelFormat)dxgiFormat,
+                pixelFormat = (Evergine.Common.Graphics.PixelFormat)dxgiFormat,
             };
         }
 
@@ -144,7 +144,7 @@ namespace VisualTests.LowLevel.Images
                 MipLevels = (uint)dds.MipInfos.Length,
                 ArraySize = (uint)dds.Data.Length / faces,
                 Faces = faces,
-                pixelFormat = (WaveEngine.Common.Graphics.PixelFormat)dds.DxgiFormat,
+                pixelFormat = (Evergine.Common.Graphics.PixelFormat)dds.DxgiFormat,
             };
 
             databoxes = new DataBox[description.ArraySize * description.Faces * description.MipLevels];

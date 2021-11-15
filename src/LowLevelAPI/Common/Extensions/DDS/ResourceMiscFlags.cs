@@ -25,7 +25,7 @@ freely, subject to the following restrictions:
 
 using System;
 
-namespace WaveEngine.Assets.Extensions.DDS
+namespace Evergine.Assets.Extensions.DDS
 {
     [Flags]
     internal enum ResourceMiscFlags : uint

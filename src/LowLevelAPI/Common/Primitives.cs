@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using WaveEngine.Common.Graphics.VertexFormats;
-using WaveEngine.Mathematics;
+using Evergine.Common.Graphics.VertexFormats;
+using Evergine.Mathematics;
 
 namespace Common
 {

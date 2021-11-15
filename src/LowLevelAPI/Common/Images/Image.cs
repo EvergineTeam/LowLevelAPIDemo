@@ -4,8 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using WaveEngine.Common.Graphics;
-using WaveEngine.Framework.Assets.Extensions;
+using Evergine.Common.Graphics;
+using Evergine.Framework.Assets.Extensions;
 
 namespace VisualTests.LowLevel.Images
 {

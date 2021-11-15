@@ -1,6 +1,6 @@
 ﻿// Copyright © 2019 Wave Engine S.L. All rights reserved. Use is subject to license terms.
 
-namespace WaveEngine.Assets.Extensions.KTX
+namespace Evergine.Assets.Extensions.KTX
 {
     /// <summary>
     /// The KTX key value pair class.
