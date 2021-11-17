@@ -37,7 +37,7 @@ Set of samples using the Low Level abstraction API over Vulkan, DirectX, OpenGL,
 Required Visual Studio 2022 with .NET6 support
 
 ----
-Powered by **[Evergine 3.2](http://www.Evergine.net)**
+Powered by **[Evergine](http://evergine.com)**
 
 LET'S CONNECT!
 
