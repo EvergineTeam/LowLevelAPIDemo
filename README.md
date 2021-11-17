@@ -41,6 +41,6 @@ Powered by **[Evergine 3.2](http://www.Evergine.net)**
 
 LET'S CONNECT!
 
-- [Youtube](https://www.youtube.com/subscription_center?add_user=EvergineChannel)
+- [Youtube](https://www.youtube.com/channel/UCpA-X92rxM0OuywdVcir9mA)
 - [Twitter](https://twitter.com/EvergineTeam)
-- [Blog](http://geeks.ms/Evergineteam/)
+- [News](https://evergine.com/news/)
