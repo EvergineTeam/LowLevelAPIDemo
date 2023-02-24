@@ -60,13 +60,13 @@
   </ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Evergine.Common" Version="2022.9.28.1" />
-		<PackageReference Include="Evergine.DirectX11" Version="2022.9.28.1" />
-		<PackageReference Include="Evergine.DirectX12" Version="2022.9.28.1" />
-		<PackageReference Include="Evergine.Mathematics" Version="2022.9.28.1" />
-		<PackageReference Include="Evergine.OpenGL" Version="2022.9.28.1" />
-		<PackageReference Include="Evergine.SDL" Version="2022.9.28.1" />
-		<PackageReference Include="Evergine.Vulkan" Version="2022.9.28.1" />
+		<PackageReference Include="Evergine.Common" Version="2023.2.24.1-nightly" />
+		<PackageReference Include="Evergine.DirectX11" Version="2023.2.24.1-nightly" />
+		<PackageReference Include="Evergine.DirectX12" Version="2023.2.24.1-nightly" />
+		<PackageReference Include="Evergine.Mathematics" Version="2023.2.24.1-nightly" />
+		<PackageReference Include="Evergine.OpenGL" Version="2023.2.24.1-nightly" />
+		<PackageReference Include="Evergine.SDL" Version="2023.2.24.1-nightly" />
+		<PackageReference Include="Evergine.Vulkan" Version="2023.2.24.1-nightly" />
 	</ItemGroup>
 	
   <ItemGroup>
