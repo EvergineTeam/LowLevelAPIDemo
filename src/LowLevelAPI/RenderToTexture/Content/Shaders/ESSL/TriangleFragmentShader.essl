@@ -2,11 +2,11 @@
 precision mediump float;
 precision highp int;
 
-in highp vec4 out_var_COLOR;
+in highp vec4 var_COLOR;
 layout(location = 0) out highp vec4 out_var_SV_Target;
 
 void main()
 {
-    out_var_SV_Target = out_var_COLOR;
+    out_var_SV_Target = var_COLOR;
 }
 

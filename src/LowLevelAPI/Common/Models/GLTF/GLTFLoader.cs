@@ -2,7 +2,7 @@
 using glTFLoader.Schema;
 using System;
 using System.IO;
-using Evergine.Platform;
+using Evergine.Common.IO;
 
 namespace Common
 {

@@ -5,7 +5,6 @@ using System.Runtime.InteropServices;
 using Evergine.Common.Graphics;
 using Evergine.Common.Graphics.VertexFormats;
 using Evergine.Mathematics;
-using Evergine.Platform;
 using Buffer = Evergine.Common.Graphics.Buffer;
 
 namespace Stencil

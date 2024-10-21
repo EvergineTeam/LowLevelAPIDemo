@@ -31,7 +31,7 @@ namespace Texture2DArray
                 var swapChainDescriptor = test.CreateSwapChainDescription(window.Width, window.Height);
                 swapChainDescriptor.SurfaceInfo = window.SurfaceInfo;
 
-                var graphicsContext = test.CreateGraphicsContext(swapChainDescriptor, GraphicsBackend.DirectX11);
+                var graphicsContext = test.CreateGraphicsContext(swapChainDescriptor, GraphicsBackend.Vulkan);
                 windowsTitle = $"{windowsTitle} [{graphicsContext.BackendType}]";
 
                 test.Run();

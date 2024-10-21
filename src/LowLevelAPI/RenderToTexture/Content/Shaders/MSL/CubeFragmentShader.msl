@@ -13,7 +13,7 @@ struct PS_in
     float2 in_var_TEXCOORD [[user(locn0)]];
 };
 
-fragment PS_out PS(PS_in in [[stage_in]], texture2d<float> DiffuseTexture [[texture(0)]], sampler Sampler [[sampler(0)]], float4 gl_FragCoord [[position]])
+fragment PS_out PS(PS_in in [[stage_in]], texture2d<float> DiffuseTexture [[texture(0)]], sampler Sampler [[sampler(0)]])
 {
     PS_out out = {};
     out.out_var_SV_Target = DiffuseTexture.sample(Sampler, in.in_var_TEXCOORD);

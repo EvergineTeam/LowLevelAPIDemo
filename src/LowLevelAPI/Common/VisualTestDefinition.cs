@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Reflection;
+using Evergine.Common;
 using Evergine.Common.Audio;
 using Evergine.Common.Graphics;
-using Evergine.Platform;
+using Evergine.Common.IO;
 using static Evergine.Common.Graphics.SurfaceInfo;
 
 namespace Common
@@ -42,27 +44,29 @@ namespace Common
             set => this.surface = value;
         }
 
-        public AudioDevice AudioDevice => this.audioDevice;
-
-        public FrameBuffer FrameBuffer { get => this.frameBuffer; set => this.frameBuffer = value; }
-
         public Action<string> FPSUpdateCallback;
 
         public VisualTestDefinition()
+            : this(string.Empty)
         {
-            this.assetsRootPath = AssetsDirectory.DefaultFolderName;
+        }
+
+        public VisualTestDefinition(string contentSubPath)
+        {
+            var assemblyPath = Assembly.GetEntryAssembly()?.Location ?? string.Empty;
+            this.assetsRootPath = Path.Combine(Path.GetDirectoryName(assemblyPath), AssetsDirectory.DefaultFolderName, contentSubPath);
         }
 
         public void Initialize()
         {
             this.assetsDirectory = new AssetsDirectory(this.assetsRootPath);
-            this.windowSystem = GetInstance<WindowsSystem>("Evergine.SDL", "SDLWindowsSystem");
+            this.windowSystem = GetInstance<WindowsSystem>("Evergine.Forms", "FormsWindowsSystem");
         }
 
-        public GraphicsContext CreateGraphicsContext(SwapChainDescription? swapChainDescriptor = null, GraphicsBackend? prefferedBackend = null)
+        public GraphicsContext CreateGraphicsContext(SwapChainDescription? swapChainDescriptor = null, GraphicsBackend? preferredBackend = null)
         {
             string graphicsContextTypeName = string.Empty;
-            switch (prefferedBackend)
+            switch (preferredBackend)
             {
                 case GraphicsBackend.DirectX11:
                     this.graphicsContext = this.GetInstance<GraphicsContext>("Evergine.DirectX11", "DX11GraphicsContext");
@@ -76,17 +80,37 @@ namespace Common
                     this.graphicsContext = this.GetInstance<GraphicsContext>("Evergine.OpenGL", "GLGraphicsContext");
                     break;
                 case GraphicsBackend.Vulkan:
-                    this.graphicsContext = this.GetInstance<GraphicsContext>("Evergine.Vulkan", "VKGraphicsContext");
+                    this.graphicsContext = this.GetInstance<GraphicsContext>(
+                        "Evergine.Vulkan",
+                        "VKGraphicsContext",
+                        new[]
+                        {
+                            "VK_KHR_multiview",
+                            "VK_KHR_external_memory",
+                            "VK_KHR_external_memory_win32",
+                            "VK_KHR_external_fence",
+                            "VK_KHR_external_fence_win32",
+                            "VK_KHR_external_semaphore",
+                            "VK_KHR_external_semaphore_win32",
+                        },
+                        new[]
+                        {
+                            "VK_KHR_get_physical_device_properties2",
+                            "VK_KHR_external_memory_capabilities",
+                            "VK_KHR_external_fence_capabilities",
+                            "VK_KHR_external_semaphore_capabilities",
+                        });
                     break;
                 case GraphicsBackend.Metal:
                     this.graphicsContext = this.GetInstance<GraphicsContext>("Evergine.Metal", "MTLGraphicsContext");
+                    break;
+                case GraphicsBackend.WebGPU:
+                    this.graphicsContext = this.GetInstance<GraphicsContext>("Evergine.WebGPU", "WGPUGraphicsContext");
                     break;
                 default:
                     throw new InvalidOperationException("Invalid render backend");
             }
 
-            this.graphicsContext.DefaultTextureUploaderSize = 128 * 1024 * 1024;
-            this.graphicsContext.DefaultBufferUploaderSize = 64 * 1024 * 1024;
 #if DEBUG
             this.graphicsContext.CreateDevice(new ValidationLayer(ValidationLayer.NotifyMethod.Trace));
 #else
@@ -100,20 +124,6 @@ namespace Common
             }
 
             return this.graphicsContext;
-        }
-
-        protected bool TryGetInstance<T>(string assemblyName, string typeName, out T instance, params object[] arguments)
-        {
-            try
-            {
-                instance = this.GetInstance<T>(assemblyName, typeName, arguments);
-                return true;
-            }
-            catch
-            {
-                instance = default;
-                return false;
-            }
         }
 
         protected T GetInstance<T>(string assemblyName, string typeName, params object[] arguments)
@@ -157,6 +167,10 @@ namespace Common
                 return;
             }
 
+            this.Surface?.KeyboardDispatcher?.DispatchEvents();
+            this.Surface?.MouseDispatcher?.DispatchEvents();
+            this.Surface?.TouchDispatcher?.DispatchEvents();
+
             if (this.doPresent)
             {
                 if (this.windowResized)
@@ -166,6 +180,8 @@ namespace Common
                     this.frameBuffer = this.swapChain?.FrameBuffer;
                     this.OnResized(this.surface.Width, this.surface.Height);
                 }
+
+                this.swapChain?.InitFrame();
             }
 
             this.CalculateFPS();
@@ -181,22 +197,6 @@ namespace Common
             }
         }
 
-        public virtual SwapChainDescription CreateSwapChainDescription(uint width, uint height, SurfaceInfo info)
-        {
-            return new SwapChainDescription()
-            {
-                Width = width,
-                Height = height,
-                SurfaceInfo = info,
-                ColorTargetFormat = PixelFormat.R8G8B8A8_UNorm,
-                ColorTargetFlags = TextureFlags.RenderTarget | TextureFlags.ShaderResource,
-                DepthStencilTargetFormat = PixelFormat.D24_UNorm_S8_UInt,
-                DepthStencilTargetFlags = TextureFlags.DepthStencil,
-                SampleCount = this.SampleCount,
-                IsWindowed = true,
-                RefreshRate = 60,
-            };
-        }
         public virtual SwapChainDescription CreateSwapChainDescription(uint width, uint height)
         {
             return new SwapChainDescription()

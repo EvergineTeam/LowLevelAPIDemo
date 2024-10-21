@@ -14,20 +14,23 @@ layout(location = 0) out vec4 out_var_SV_Target;
 
 void main()
 {
-    vec4 _48;
-    for (;;)
+    vec4 _46;
+    switch (0u)
     {
-        if (Matrices.IsTextured != 0u)
+        default:
         {
-            _48 = texture(SPIRV_Cross_CombinedDiffuseTextureSampler, in_var_TEXCOORD);
-            break;
-        }
-        else
-        {
-            _48 = in_var_COLOR;
-            break;
+            if (Matrices.IsTextured != 0u)
+            {
+                _46 = texture(SPIRV_Cross_CombinedDiffuseTextureSampler, in_var_TEXCOORD);
+                break;
+            }
+            else
+            {
+                _46 = in_var_COLOR;
+                break;
+            }
         }
     }
-    out_var_SV_Target = _48;
+    out_var_SV_Target = _46;
 }
 

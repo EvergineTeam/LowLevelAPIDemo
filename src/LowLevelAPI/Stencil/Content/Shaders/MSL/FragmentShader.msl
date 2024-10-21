@@ -20,24 +20,27 @@ struct PS_in
     float2 in_var_TEXCOORD [[user(locn1)]];
 };
 
-fragment PS_out PS(PS_in in [[stage_in]], constant type_Matrices& Matrices [[buffer(0)]], texture2d<float> DiffuseTexture [[texture(0)]], sampler Sampler [[sampler(0)]], float4 gl_FragCoord [[position]])
+fragment PS_out PS(PS_in in [[stage_in]], constant type_Matrices& Matrices [[buffer(0)]], texture2d<float> DiffuseTexture [[texture(0)]], sampler Sampler [[sampler(0)]])
 {
     PS_out out = {};
-    float4 _48;
-    for (;;)
+    float4 _46;
+    switch (0u)
     {
-        if (Matrices.IsTextured != 0u)
+        default:
         {
-            _48 = DiffuseTexture.sample(Sampler, in.in_var_TEXCOORD);
-            break;
-        }
-        else
-        {
-            _48 = in.in_var_COLOR;
-            break;
+            if (Matrices.IsTextured != 0u)
+            {
+                _46 = DiffuseTexture.sample(Sampler, in.in_var_TEXCOORD);
+                break;
+            }
+            else
+            {
+                _46 = in.in_var_COLOR;
+                break;
+            }
         }
     }
-    out.out_var_SV_Target = _48;
+    out.out_var_SV_Target = _46;
     return out;
 }
 

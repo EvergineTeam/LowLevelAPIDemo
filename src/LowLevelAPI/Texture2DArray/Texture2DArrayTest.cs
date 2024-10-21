@@ -4,7 +4,6 @@ using System.Runtime.CompilerServices;
 using Evergine.Common.Graphics;
 using Evergine.Common.Graphics.VertexFormats;
 using Evergine.Mathematics;
-using Evergine.Platform;
 using Buffer = Evergine.Common.Graphics.Buffer;
 
 namespace Texture2DArray

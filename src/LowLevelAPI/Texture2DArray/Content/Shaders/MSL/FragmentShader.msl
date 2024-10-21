@@ -13,10 +13,11 @@ struct PS_in
     float2 in_var_TEXCOORD [[user(locn0)]];
 };
 
-fragment PS_out PS(PS_in in [[stage_in]], texture2d_array<float> DiffuseTexture [[texture(0)]], sampler Sampler [[sampler(0)]], float4 gl_FragCoord [[position]])
+fragment PS_out PS(PS_in in [[stage_in]], texture2d_array<float> DiffuseTexture [[texture(0)]], sampler Sampler [[sampler(0)]])
 {
     PS_out out = {};
-    out.out_var_SV_Target = DiffuseTexture.sample(Sampler, float3(in.in_var_TEXCOORD, float(int(in.in_var_TEXCOORD.x * 4.0))).xy, uint(round(float3(in.in_var_TEXCOORD, float(int(in.in_var_TEXCOORD.x * 4.0))).z)));
+    float3 _32 = float3(in.in_var_TEXCOORD, float(int(in.in_var_TEXCOORD.x * 4.0)));
+    out.out_var_SV_Target = DiffuseTexture.sample(Sampler, _32.xy, uint(round(_32.z)));
     return out;
 }
 
