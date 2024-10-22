@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30709.132
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{9FF22F89-3492-452D-A1BF-9557C6CB16FC}"
 EndProject
@@ -17,13 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeometryShader", "GeometryS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextureCubeArray", "TextureCubeArray\TextureCubeArray.csproj", "{6115E672-B027-4E33-9466-80E6781FB854}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenderToTexture", "RenderToTexture\RenderToTexture.csproj", "{5428D28B-8829-4264-B896-AFE4A23FC330}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RenderToTexture", "RenderToTexture\RenderToTexture.csproj", "{5428D28B-8829-4264-B896-AFE4A23FC330}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawInstancingIndirect", "DrawInstancingIndirect\DrawInstancingIndirect.csproj", "{B7BA7386-5006-4E48-924C-4959BCDBF9A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrawInstancingIndirect", "DrawInstancingIndirect\DrawInstancingIndirect.csproj", "{B7BA7386-5006-4E48-924C-4959BCDBF9A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputeTexture", "ComputeTexture\ComputeTexture.csproj", "{5068C0D3-C454-4CCC-A6F1-72BAC0BDD7C2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputeRayTracing", "ComputeRayTracing\ComputeRayTracing.csproj", "{76C55C86-5248-4C67-B69E-54027181DB89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComputeTexture", "ComputeTexture\ComputeTexture.csproj", "{5068C0D3-C454-4CCC-A6F1-72BAC0BDD7C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,10 +69,6 @@ Global
 		{5068C0D3-C454-4CCC-A6F1-72BAC0BDD7C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5068C0D3-C454-4CCC-A6F1-72BAC0BDD7C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5068C0D3-C454-4CCC-A6F1-72BAC0BDD7C2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{76C55C86-5248-4C67-B69E-54027181DB89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{76C55C86-5248-4C67-B69E-54027181DB89}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{76C55C86-5248-4C67-B69E-54027181DB89}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{76C55C86-5248-4C67-B69E-54027181DB89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

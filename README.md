@@ -28,13 +28,10 @@ Set of samples using the Low Level abstraction API over Vulkan, DirectX, OpenGL,
 ## Compute Texture
 ![alt Screenshot8](Captures/Capture9.png)
 
-## Compute Raytracing
-![alt Screenshot9](Captures/Capture0.PNG)
-
 
 ## Build and Test
 
-Required Visual Studio 2022 with .NET6 support
+Required Visual Studio 2022 with .NET8 support
 
 ----
 Powered by **[Evergine](http://evergine.com)**
