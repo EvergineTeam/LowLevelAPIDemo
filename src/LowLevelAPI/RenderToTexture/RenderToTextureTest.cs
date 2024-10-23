@@ -65,6 +65,7 @@ namespace RenderToTexture
 
         private Viewport[] viewports;
         private Rectangle[] scissors;
+        private Rectangle[] rTScissors;
         private CommandQueue commandQueue;
 
         private FrameBuffer rTFrameBuffer;
@@ -194,6 +195,9 @@ namespace RenderToTexture
             this.rTViewports = new Viewport[1];
             this.rTViewports[0] = new Viewport(0, 0, rtSize, rtSize);
 
+            this.rTScissors = new Rectangle[1];
+            this.rTScissors[0] = new Rectangle(0, 0, (int)rtSize, (int)rtSize);
+
             // Compile Vertex and Pixel shaders
             var cubeVertexShaderDescription = await this.assetsDirectory.ReadAndCompileShader(this.graphicsContext, "CubeHLSL", "CubeVertexShader", ShaderStages.Vertex, "VS");
             var cubePixelShaderDescription = await this.assetsDirectory.ReadAndCompileShader(this.graphicsContext, "CubeHLSL", "CubeFragmentShader", ShaderStages.Pixel, "PS");
@@ -285,7 +289,7 @@ namespace RenderToTexture
             commandBuffer.BeginRenderPass(ref renderPassDescription);
 
             commandBuffer.SetViewports(this.rTViewports);
-            commandBuffer.SetScissorRectangles(this.scissors);
+            commandBuffer.SetScissorRectangles(this.rTScissors);
             commandBuffer.SetGraphicsPipelineState(this.trianglePipelineState);
             commandBuffer.SetResourceSet(this.triangleResourceSet);
             commandBuffer.SetVertexBuffers(this.triangleVertexBuffers);
