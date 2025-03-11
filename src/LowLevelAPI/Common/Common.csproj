@@ -14,8 +14,8 @@
 
   <ItemGroup>
 	<PackageReference Include="glTF2Loader" Version="1.1.3-alpha" />
-    <PackageReference Include="Evergine.Common" Version="2025.3.10.805-nightly" />
-    <PackageReference Include="Evergine.Mathematics" Version="2025.3.10.805-nightly" />
+    <PackageReference Include="Evergine.Common" Version="2025.3.11.551-nightly" />
+    <PackageReference Include="Evergine.Mathematics" Version="2025.3.11.551-nightly" />
   </ItemGroup>
 
 </Project>
