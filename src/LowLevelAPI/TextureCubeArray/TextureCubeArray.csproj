@@ -64,14 +64,14 @@
   </ItemGroup>
 	
 	<ItemGroup>
-		<PackageReference Include="Evergine.Common" Version="2025.3.11.551-nightly" />
-		<PackageReference Include="Evergine.DirectX11" Version="2025.3.11.551-nightly" />
-		<PackageReference Include="Evergine.DirectX12" Version="2025.3.11.551-nightly" />
-		<PackageReference Include="Evergine.Mathematics" Version="2025.3.11.551-nightly" />
-		<PackageReference Include="Evergine.OpenGL" Version="2025.3.11.551-nightly" />
-		<PackageReference Include="Evergine.Forms" Version="2025.3.11.551-nightly" />
-		<PackageReference Include="Evergine.Vulkan" Version="2025.3.11.551-nightly" />
-		<PackageReference Include="Evergine.WebGPU" Version="2025.3.11.551-nightly" />
+		<PackageReference Include="Evergine.Common" Version="2025.3.18.7" />
+		<PackageReference Include="Evergine.DirectX11" Version="2025.3.18.7" />
+		<PackageReference Include="Evergine.DirectX12" Version="2025.3.18.7" />
+		<PackageReference Include="Evergine.Mathematics" Version="2025.3.18.7" />
+		<PackageReference Include="Evergine.OpenGL" Version="2025.3.18.7" />
+		<PackageReference Include="Evergine.Forms" Version="2025.3.18.7" />
+		<PackageReference Include="Evergine.Vulkan" Version="2025.3.18.7" />
+		<PackageReference Include="Evergine.WebGPU" Version="2025.3.18.7" />
 	</ItemGroup>
 	
   <ItemGroup>
