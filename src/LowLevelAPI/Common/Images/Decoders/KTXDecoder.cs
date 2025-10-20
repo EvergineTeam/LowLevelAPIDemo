@@ -99,7 +99,7 @@ namespace VisualTests.LowLevel.Images
                     {
                         var face = slice.Faces[faceIndex];
 
-                        uint formatSize = description.pixelFormat.GetSizeInBytes() / 8;
+                        uint formatSize = description.pixelFormat.GetSizeInBytes();
                         uint rowPitch = (uint)level.Width * formatSize;
                         uint slicePitch = (uint)face.Data.Length;                        
                         int sliceIndexCalculated = (sliceIndex * slice.Faces.Length) + faceIndex;
