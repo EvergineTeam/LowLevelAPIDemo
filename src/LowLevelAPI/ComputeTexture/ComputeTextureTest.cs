@@ -37,6 +37,12 @@ namespace ComputeTexture
         {
         }
 
+        protected override bool CheckBackendCompatibility()
+        {
+            return this.GraphicsBackend != GraphicsBackend.OpenGL
+                && this.GraphicsBackend != GraphicsBackend.OpenGLES;
+        }
+
         protected override void OnResized(uint width, uint height)
         {
             this.viewports[0] = new Viewport(0, 0, width, height);

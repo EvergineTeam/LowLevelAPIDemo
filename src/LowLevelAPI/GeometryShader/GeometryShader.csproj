@@ -68,13 +68,14 @@
   </ItemGroup>
 
   <ItemGroup>
-	  <PackageReference Include="Evergine.Common" Version="2025.3.18.7" />
-	  <PackageReference Include="Evergine.DirectX11" Version="2025.3.18.7" />
-	  <PackageReference Include="Evergine.DirectX12" Version="2025.3.18.7" />
-	  <PackageReference Include="Evergine.Mathematics" Version="2025.3.18.7" />
-	  <PackageReference Include="Evergine.OpenGL" Version="2025.3.18.7" />
-	  <PackageReference Include="Evergine.Forms" Version="2025.3.18.7" />
-	  <PackageReference Include="Evergine.Vulkan" Version="2025.3.18.7" />
+	  <PackageReference Include="Evergine.Common" Version="2025.10.21.8" />
+	  <PackageReference Include="Evergine.DirectX11" Version="2025.10.21.8" />
+	  <PackageReference Include="Evergine.DirectX12" Version="2025.10.21.8" />
+	  <PackageReference Include="Evergine.Mathematics" Version="2025.10.21.8" />
+	  <PackageReference Include="Evergine.OpenGL" Version="2025.10.21.8" />
+	  <PackageReference Include="Evergine.Forms" Version="2025.10.21.8" />
+	  <PackageReference Include="Evergine.Vulkan" Version="2025.10.21.8" />
+	  <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
   </ItemGroup>
 
   <ItemGroup>

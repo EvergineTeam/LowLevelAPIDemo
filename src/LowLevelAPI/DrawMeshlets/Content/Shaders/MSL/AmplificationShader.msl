@@ -1,0 +1,50 @@
+#include <metal_stdlib>
+#include <simd/simd.h>
+
+using namespace metal;
+
+struct type_Matrices
+{
+    float4x4 worldViewProj;
+    float4x4 worldViewProj2;
+};
+
+struct MeshletBounds
+{
+    packed_float3 center;
+    float radius;
+};
+
+struct type_StructuredBuffer_MeshletBounds
+{
+    MeshletBounds _m0[1];
+};
+
+struct Payload
+{
+    uint meshletIndex;
+};
+
+struct AS_out
+{
+    uint out_var_meshletIndex;
+};
+
+unknown AS_out AS(constant type_Matrices& Matrices [[buffer(0)]], const device type_StructuredBuffer_MeshletBounds& Bounds [[buffer(1)]], uint3 gl_GlobalInvocationID [[thread_position_in_grid]])
+{
+    AS_out out = {};
+    threadgroup Payload g_Payload;
+    threadgroup uint g_DispatchCount;
+    g_Payload.meshletIndex = gl_GlobalInvocationID.x;
+    float4 _54 = Matrices.worldViewProj2 * float4(Bounds._m0[gl_GlobalInvocationID.x].center[0], Bounds._m0[gl_GlobalInvocationID.x].center[1], Bounds._m0[gl_GlobalInvocationID.x].center[2], 1.0);
+    float _55 = _54.x;
+    float _56 = _54.w;
+    float _57 = -_56;
+    float _61 = _54.y;
+    float _66 = _54.z;
+    g_DispatchCount = uint((((((_55 >= _57) && (_55 <= _56)) && (_61 >= _57)) && (_61 <= _56)) && (_66 >= 0.0)) && (_66 <= _56));
+    gl_BuiltIn_5274 = g_DispatchCount;
+    out.out_var_meshletIndex = g_Payload.meshletIndex;
+    return out;
+}
+

@@ -1,0 +1,207 @@
+#include <metal_stdlib>
+#include <simd/simd.h>
+
+using namespace metal;
+
+struct type_Matrices
+{
+    float4x4 worldViewProj;
+    float4x4 worldViewProj2;
+};
+
+struct type_StructuredBuffer_v3float
+{
+    packed_float3 _m0[1];
+};
+
+struct Meshlet
+{
+    uint VertexOffset;
+    uint TriangleOffset;
+    uint VertexCount;
+    uint TriangleCount;
+};
+
+struct type_StructuredBuffer_Meshlet
+{
+    Meshlet _m0[1];
+};
+
+struct type_StructuredBuffer_uint
+{
+    uint _m0[1];
+};
+
+struct MS_out
+{
+    float3 out_var_COLOR_0;
+    float3 out_var_COLOR_1;
+    float3 out_var_COLOR_2;
+    float3 out_var_COLOR_3;
+    float3 out_var_COLOR_4;
+    float3 out_var_COLOR_5;
+    float3 out_var_COLOR_6;
+    float3 out_var_COLOR_7;
+    float3 out_var_COLOR_8;
+    float3 out_var_COLOR_9;
+    float3 out_var_COLOR_10;
+    float3 out_var_COLOR_11;
+    float3 out_var_COLOR_12;
+    float3 out_var_COLOR_13;
+    float3 out_var_COLOR_14;
+    float3 out_var_COLOR_15;
+    float3 out_var_COLOR_16;
+    float3 out_var_COLOR_17;
+    float3 out_var_COLOR_18;
+    float3 out_var_COLOR_19;
+    float3 out_var_COLOR_20;
+    float3 out_var_COLOR_21;
+    float3 out_var_COLOR_22;
+    float3 out_var_COLOR_23;
+    float3 out_var_COLOR_24;
+    float3 out_var_COLOR_25;
+    float3 out_var_COLOR_26;
+    float3 out_var_COLOR_27;
+    float3 out_var_COLOR_28;
+    float3 out_var_COLOR_29;
+    float3 out_var_COLOR_30;
+    float3 out_var_COLOR_31;
+    float3 out_var_COLOR_32;
+    float3 out_var_COLOR_33;
+    float3 out_var_COLOR_34;
+    float3 out_var_COLOR_35;
+    float3 out_var_COLOR_36;
+    float3 out_var_COLOR_37;
+    float3 out_var_COLOR_38;
+    float3 out_var_COLOR_39;
+    float3 out_var_COLOR_40;
+    float3 out_var_COLOR_41;
+    float3 out_var_COLOR_42;
+    float3 out_var_COLOR_43;
+    float3 out_var_COLOR_44;
+    float3 out_var_COLOR_45;
+    float3 out_var_COLOR_46;
+    float3 out_var_COLOR_47;
+    float3 out_var_COLOR_48;
+    float3 out_var_COLOR_49;
+    float3 out_var_COLOR_50;
+    float3 out_var_COLOR_51;
+    float3 out_var_COLOR_52;
+    float3 out_var_COLOR_53;
+    float3 out_var_COLOR_54;
+    float3 out_var_COLOR_55;
+    float3 out_var_COLOR_56;
+    float3 out_var_COLOR_57;
+    float3 out_var_COLOR_58;
+    float3 out_var_COLOR_59;
+    float3 out_var_COLOR_60;
+    float3 out_var_COLOR_61;
+    float3 out_var_COLOR_62;
+    float3 out_var_COLOR_63;
+    float4 gl_Position[64];
+};
+
+struct MS_in
+{
+    uint in_var_meshletIndex;
+};
+
+unknown MS_out MS(MS_in in [[stage_in]], constant type_Matrices& Matrices [[buffer(0)]], const device type_StructuredBuffer_v3float& Vertices [[buffer(1)]], const device type_StructuredBuffer_Meshlet& Meshlets [[buffer(2)]], const device type_StructuredBuffer_uint& VertexIndices [[buffer(3)]], const device type_StructuredBuffer_uint& TriangleIndices [[buffer(4)]], uint gl_LocalInvocationIndex [[thread_index_in_threadgroup]])
+{
+    MS_out out = {};
+    float3 out_var_COLOR[64] = {};
+    gl_BuiltIn_5275 = Meshlets._m0[in.in_var_meshletIndex].TriangleCount;
+    int _75 = int(gl_LocalInvocationIndex * 4u);
+    int _76 = _75 + 4;
+    uint _77 = uint(_75);
+    if (_77 < Meshlets._m0[in.in_var_meshletIndex].TriangleCount)
+    {
+        for (int _82 = _75; _82 < _76; )
+        {
+            uint _88 = Meshlets._m0[in.in_var_meshletIndex].TriangleOffset + uint(_82);
+            uint _97 = uint(_82) * 3u;
+            gl_BuiltIn_5276[_97] = (TriangleIndices._m0[_88] >> 0u) & 255u;
+            gl_BuiltIn_5276[_97 + 1u] = (TriangleIndices._m0[_88] >> 8u) & 255u;
+            gl_BuiltIn_5276[_97 + 2u] = (TriangleIndices._m0[_88] >> 16u) & 255u;
+            _82++;
+            continue;
+        }
+    }
+    if (_77 < Meshlets._m0[in.in_var_meshletIndex].VertexCount)
+    {
+        for (int _107 = _75; _107 < _76; )
+        {
+            uint _113 = Meshlets._m0[in.in_var_meshletIndex].VertexOffset + uint(_107);
+            out.gl_Position[_107] = Matrices.worldViewProj * float4(Vertices._m0[VertexIndices._m0[_113]][0], Vertices._m0[VertexIndices._m0[_113]][1], Vertices._m0[VertexIndices._m0[_113]][2], 1.0);
+            out_var_COLOR[_107] = float3(float(in.in_var_meshletIndex & 1u), float(in.in_var_meshletIndex & 3u) * 0.25, float(in.in_var_meshletIndex & 7u) * 0.125);
+            _107++;
+            continue;
+        }
+    }
+    out.out_var_COLOR_0 = out_var_COLOR[0];
+    out.out_var_COLOR_1 = out_var_COLOR[1];
+    out.out_var_COLOR_2 = out_var_COLOR[2];
+    out.out_var_COLOR_3 = out_var_COLOR[3];
+    out.out_var_COLOR_4 = out_var_COLOR[4];
+    out.out_var_COLOR_5 = out_var_COLOR[5];
+    out.out_var_COLOR_6 = out_var_COLOR[6];
+    out.out_var_COLOR_7 = out_var_COLOR[7];
+    out.out_var_COLOR_8 = out_var_COLOR[8];
+    out.out_var_COLOR_9 = out_var_COLOR[9];
+    out.out_var_COLOR_10 = out_var_COLOR[10];
+    out.out_var_COLOR_11 = out_var_COLOR[11];
+    out.out_var_COLOR_12 = out_var_COLOR[12];
+    out.out_var_COLOR_13 = out_var_COLOR[13];
+    out.out_var_COLOR_14 = out_var_COLOR[14];
+    out.out_var_COLOR_15 = out_var_COLOR[15];
+    out.out_var_COLOR_16 = out_var_COLOR[16];
+    out.out_var_COLOR_17 = out_var_COLOR[17];
+    out.out_var_COLOR_18 = out_var_COLOR[18];
+    out.out_var_COLOR_19 = out_var_COLOR[19];
+    out.out_var_COLOR_20 = out_var_COLOR[20];
+    out.out_var_COLOR_21 = out_var_COLOR[21];
+    out.out_var_COLOR_22 = out_var_COLOR[22];
+    out.out_var_COLOR_23 = out_var_COLOR[23];
+    out.out_var_COLOR_24 = out_var_COLOR[24];
+    out.out_var_COLOR_25 = out_var_COLOR[25];
+    out.out_var_COLOR_26 = out_var_COLOR[26];
+    out.out_var_COLOR_27 = out_var_COLOR[27];
+    out.out_var_COLOR_28 = out_var_COLOR[28];
+    out.out_var_COLOR_29 = out_var_COLOR[29];
+    out.out_var_COLOR_30 = out_var_COLOR[30];
+    out.out_var_COLOR_31 = out_var_COLOR[31];
+    out.out_var_COLOR_32 = out_var_COLOR[32];
+    out.out_var_COLOR_33 = out_var_COLOR[33];
+    out.out_var_COLOR_34 = out_var_COLOR[34];
+    out.out_var_COLOR_35 = out_var_COLOR[35];
+    out.out_var_COLOR_36 = out_var_COLOR[36];
+    out.out_var_COLOR_37 = out_var_COLOR[37];
+    out.out_var_COLOR_38 = out_var_COLOR[38];
+    out.out_var_COLOR_39 = out_var_COLOR[39];
+    out.out_var_COLOR_40 = out_var_COLOR[40];
+    out.out_var_COLOR_41 = out_var_COLOR[41];
+    out.out_var_COLOR_42 = out_var_COLOR[42];
+    out.out_var_COLOR_43 = out_var_COLOR[43];
+    out.out_var_COLOR_44 = out_var_COLOR[44];
+    out.out_var_COLOR_45 = out_var_COLOR[45];
+    out.out_var_COLOR_46 = out_var_COLOR[46];
+    out.out_var_COLOR_47 = out_var_COLOR[47];
+    out.out_var_COLOR_48 = out_var_COLOR[48];
+    out.out_var_COLOR_49 = out_var_COLOR[49];
+    out.out_var_COLOR_50 = out_var_COLOR[50];
+    out.out_var_COLOR_51 = out_var_COLOR[51];
+    out.out_var_COLOR_52 = out_var_COLOR[52];
+    out.out_var_COLOR_53 = out_var_COLOR[53];
+    out.out_var_COLOR_54 = out_var_COLOR[54];
+    out.out_var_COLOR_55 = out_var_COLOR[55];
+    out.out_var_COLOR_56 = out_var_COLOR[56];
+    out.out_var_COLOR_57 = out_var_COLOR[57];
+    out.out_var_COLOR_58 = out_var_COLOR[58];
+    out.out_var_COLOR_59 = out_var_COLOR[59];
+    out.out_var_COLOR_60 = out_var_COLOR[60];
+    out.out_var_COLOR_61 = out_var_COLOR[61];
+    out.out_var_COLOR_62 = out_var_COLOR[62];
+    out.out_var_COLOR_63 = out_var_COLOR[63];
+    return out;
+}
+

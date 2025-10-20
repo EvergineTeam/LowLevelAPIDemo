@@ -31,7 +31,7 @@ namespace DrawTextureCube
                 var swapChainDescriptor = test.CreateSwapChainDescription(window.Width, window.Height);
                 swapChainDescriptor.SurfaceInfo = window.SurfaceInfo;
 
-                var graphicsContext = test.CreateGraphicsContext(swapChainDescriptor, GraphicsBackend.Vulkan);
+                var graphicsContext = test.CreateGraphicsContext(swapChainDescriptor);
                 windowsTitle = $"{windowsTitle} [{graphicsContext.BackendType}]";
 
                 test.Run();

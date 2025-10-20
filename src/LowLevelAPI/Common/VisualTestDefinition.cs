@@ -46,6 +46,8 @@ namespace Common
 
         public Action<string> FPSUpdateCallback;
 
+        public GraphicsBackend GraphicsBackend { get; set; } = GraphicsBackend.DirectX11;
+
         public VisualTestDefinition()
             : this(string.Empty)
         {
@@ -61,9 +63,19 @@ namespace Common
         {
             this.assetsDirectory = new AssetsDirectory(this.assetsRootPath);
             this.windowSystem = GetInstance<WindowsSystem>("Evergine.Forms", "FormsWindowsSystem");
+            
+            if (!this.CheckBackendCompatibility())
+            {
+                throw new NotSupportedException($"Feature associated to this test is not supported on this platform: {this.GraphicsBackend}");
+            }
         }
 
-        public GraphicsContext CreateGraphicsContext(SwapChainDescription? swapChainDescriptor = null, GraphicsBackend? preferredBackend = null)
+        protected virtual bool CheckBackendCompatibility() => true;
+
+        public GraphicsContext CreateGraphicsContext(SwapChainDescription? swapChainDescriptor = null) =>
+            CreateGraphicsContext(swapChainDescriptor, this.GraphicsBackend);
+
+        private GraphicsContext CreateGraphicsContext(SwapChainDescription? swapChainDescriptor = null, GraphicsBackend? preferredBackend = null)
         {
             string graphicsContextTypeName = string.Empty;
             switch (preferredBackend)

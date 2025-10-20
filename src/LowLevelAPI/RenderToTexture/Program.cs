@@ -15,6 +15,8 @@ namespace RenderToTexture
             uint height = 720;
             using (var test = new RenderToTextureTest())
             {
+                test.GraphicsBackend = GraphicsBackend.Vulkan;
+
                 test.Initialize();
 
                 // Create Window
@@ -31,7 +33,7 @@ namespace RenderToTexture
                 var swapChainDescriptor = test.CreateSwapChainDescription(window.Width, window.Height);
                 swapChainDescriptor.SurfaceInfo = window.SurfaceInfo;
 
-                var graphicsContext = test.CreateGraphicsContext(swapChainDescriptor, GraphicsBackend.Vulkan);
+                var graphicsContext = test.CreateGraphicsContext(swapChainDescriptor);
                 windowsTitle = $"{windowsTitle} [{graphicsContext.BackendType}]";
 
                 test.Run();
