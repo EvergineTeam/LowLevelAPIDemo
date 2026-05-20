@@ -46,7 +46,7 @@ namespace Common
 
         public Action<string> FPSUpdateCallback;
 
-        public GraphicsBackend GraphicsBackend { get; set; } = GraphicsBackend.DirectX11;
+        public GraphicsBackend GraphicsBackend { get; set; } = GraphicsBackend.Vulkan;
 
         public VisualTestDefinition()
             : this(string.Empty)
@@ -62,6 +62,7 @@ namespace Common
         public void Initialize()
         {
             this.assetsDirectory = new AssetsDirectory(this.assetsRootPath);
+            ////this.windowSystem = GetInstance<WindowsSystem>("Evergine.AndroidView", "AndroidWindowsSystem");
             this.windowSystem = GetInstance<WindowsSystem>("Evergine.Forms", "FormsWindowsSystem");
             
             if (!this.CheckBackendCompatibility())

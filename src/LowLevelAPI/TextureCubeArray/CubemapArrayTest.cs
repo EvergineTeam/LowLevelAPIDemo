@@ -36,7 +36,7 @@ namespace TextureCubeArray
         {
             this.viewports[0] = new Viewport(0, 0, width, height);
             this.scissors[0] = new Rectangle(0, 0, (int)width, (int)height);
-            this.proj = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)width / height, 0.1f, 100f);
+            this.proj = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)width / height, 0.1f, 100f, reverseDepthBuffer: true);
         }
 
         protected override async void InternalLoad()
@@ -71,7 +71,7 @@ namespace TextureCubeArray
 
             Vector3 cameraPosition = new Vector3(0, 0, 1f);
             this.view = Matrix4x4.CreateLookAt(cameraPosition, new Vector3(0, 0, 0), Vector3.UnitY);
-            this.proj = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)this.frameBuffer.Width / (float)this.frameBuffer.Height, 0.1f, 100f);
+            this.proj = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)this.frameBuffer.Width / (float)this.frameBuffer.Height, 0.1f, 100f, reverseDepthBuffer: true);
 
             // Constant Buffer
             this.param = new Parameters()
@@ -91,7 +91,7 @@ namespace TextureCubeArray
 
             ResourceLayoutDescription layoutDescription = new ResourceLayoutDescription(
                     new LayoutElementDescription(0, ResourceType.ConstantBuffer, ShaderStages.Vertex),
-                    new LayoutElementDescription(0, ResourceType.Texture, ShaderStages.Pixel),
+                    new LayoutElementDescription(0, ResourceType.TextureView, ShaderStages.Pixel),
                     new LayoutElementDescription(0, ResourceType.Sampler, ShaderStages.Pixel));
 
             ResourceLayout resourceLayout = this.graphicsContext.Factory.CreateResourceLayout(ref layoutDescription);

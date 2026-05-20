@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net10.0-windows</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -64,14 +64,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Evergine.Common" Version="2025.10.21.8" />
-	<PackageReference Include="Evergine.DirectX11" Version="2025.10.21.8" />
-	<PackageReference Include="Evergine.DirectX12" Version="2025.10.21.8" />
-	<PackageReference Include="Evergine.Mathematics" Version="2025.10.21.8" />
-	<PackageReference Include="Evergine.OpenGL" Version="2025.10.21.8" />
-	<PackageReference Include="Evergine.Forms" Version="2025.10.21.8" />
-	<PackageReference Include="Evergine.Vulkan" Version="2025.10.21.8" />
-	<PackageReference Include="Evergine.WebGPU" Version="2025.10.21.8" />
+    <PackageReference Include="Evergine.Common" Version="2026.5.19.266-nightly" />
+	<PackageReference Include="Evergine.DirectX11" Version="2026.5.19.266-nightly" />
+	<PackageReference Include="Evergine.DirectX12" Version="2026.5.19.266-nightly" />
+	<PackageReference Include="Evergine.Mathematics" Version="2026.5.19.266-nightly" />
+	<PackageReference Include="Evergine.OpenGL" Version="2026.5.19.266-nightly" />
+	<PackageReference Include="Evergine.Forms" Version="2026.5.19.266-nightly" />
+	<PackageReference Include="Evergine.Vulkan" Version="2026.5.19.266-nightly" />
+	<PackageReference Include="Evergine.WebGPU" Version="2026.5.19.266-nightly" />
 	<PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
   </ItemGroup>
 

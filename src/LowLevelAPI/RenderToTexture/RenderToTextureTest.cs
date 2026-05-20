@@ -108,7 +108,7 @@ namespace RenderToTexture
             var triangleVertexBuffer = this.graphicsContext.Factory.CreateBuffer(this.triangleVertexData, ref triangleVertexBufferDescription);
 
             var triangleView = Matrix4x4.CreateLookAt(new Vector3(0, 0, 2), new Vector3(0, 0, 0), Vector3.UnitY);
-            var triangleProj = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, 512 / 512f, 0.1f, 100f);
+            var triangleProj = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, 512 / 512f, 0.1f, 100f, reverseDepthBuffer: true);
             this.triangleViewProj = Matrix4x4.Multiply(triangleView, triangleProj);
 
             // Constant Buffer
@@ -137,7 +137,6 @@ namespace RenderToTexture
                 Height = rtSize,
                 Depth = 1,
                 ArraySize = 1,
-                Faces = 1,
                 Flags = TextureFlags.RenderTarget | TextureFlags.ShaderResource,
                 CpuAccess = ResourceCpuAccess.None,
                 MipLevels = 1,
@@ -154,7 +153,6 @@ namespace RenderToTexture
                 Height = rtSize,
                 Depth = 1,
                 ArraySize = 1,
-                Faces = 1,
                 Flags = TextureFlags.DepthStencil,
                 CpuAccess = ResourceCpuAccess.None,
                 MipLevels = 1,
@@ -210,7 +208,7 @@ namespace RenderToTexture
             var cubeVertexBuffer = this.graphicsContext.Factory.CreateBuffer(this.cubeVertexData, ref cubeVertexBufferDescription);
 
             var cubeView = Matrix4x4.CreateLookAt(new Vector3(0, 0, 5), new Vector3(0, 0, 0), Vector3.UnitY);
-            var cubeProj = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, 1280 / 720f, 0.1f, 100f);
+            var cubeProj = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, 1280 / 720f, 0.1f, 100f, reverseDepthBuffer: true);
             this.cubeViewProj = Matrix4x4.Multiply(cubeView, cubeProj);
 
             // Constant Buffer
@@ -226,7 +224,7 @@ namespace RenderToTexture
 
             ResourceLayoutDescription cubeLayoutDescription = new ResourceLayoutDescription(
                     new LayoutElementDescription(0, ResourceType.ConstantBuffer, ShaderStages.Vertex),
-                    new LayoutElementDescription(0, ResourceType.Texture, ShaderStages.Pixel),
+                    new LayoutElementDescription(0, ResourceType.TextureView, ShaderStages.Pixel),
                     new LayoutElementDescription(0, ResourceType.Sampler, ShaderStages.Pixel));
             ResourceLayout cubeResourceLayout = this.graphicsContext.Factory.CreateResourceLayout(ref cubeLayoutDescription);
 

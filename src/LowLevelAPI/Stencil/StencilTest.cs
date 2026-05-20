@@ -109,7 +109,7 @@ namespace Stencil
             var samplerState = this.graphicsContext.Factory.CreateSamplerState(ref samplerDescription);
 
             var view = Matrix4x4.CreateLookAt(new Vector3(0, 0, 5), new Vector3(0, 0, 0), Vector3.UnitY);
-            var proj = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)this.frameBuffer.Width / this.frameBuffer.Height, 0.1f, 100f);
+            var proj = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)this.frameBuffer.Width / this.frameBuffer.Height, 0.1f, 100f, reverseDepthBuffer: true);
             this.viewProj = Matrix4x4.Multiply(view, proj);
 
             // Constant Buffer
@@ -125,7 +125,7 @@ namespace Stencil
 
             ResourceLayoutDescription layoutDescription = new ResourceLayoutDescription(
                     new LayoutElementDescription(0, ResourceType.ConstantBuffer, ShaderStages.Vertex | ShaderStages.Pixel),
-                    new LayoutElementDescription(0, ResourceType.Texture, ShaderStages.Pixel),
+                    new LayoutElementDescription(0, ResourceType.TextureView, ShaderStages.Pixel),
                     new LayoutElementDescription(0, ResourceType.Sampler, ShaderStages.Pixel));
 
             ResourceLayout resourceLayout = this.graphicsContext.Factory.CreateResourceLayout(ref layoutDescription);

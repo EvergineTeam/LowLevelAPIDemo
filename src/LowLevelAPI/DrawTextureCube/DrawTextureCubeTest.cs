@@ -76,7 +76,7 @@ namespace DrawTextureCube
         {
             this.viewports[0] = new Viewport(0, 0, width, height);
             this.scissors[0] = new Rectangle(0, 0, (int)width, (int)height);
-            this.proj = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)width / height, 0.1f, 100f);
+            this.proj = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)width / height, 0.1f, 100f, reverseDepthBuffer: true);
         }
 
         protected override async void InternalLoad()
@@ -107,7 +107,7 @@ namespace DrawTextureCube
             var sampler = this.graphicsContext.Factory.CreateSamplerState(ref samplerDescription);
 
             this.view = Matrix4x4.CreateLookAt(new Vector3(0, 0, 5), new Vector3(0, 0, 0), Vector3.UnitY);
-            this.proj = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)this.frameBuffer.Width / (float)this.frameBuffer.Height, 0.1f, 100f);
+            this.proj = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)this.frameBuffer.Width / (float)this.frameBuffer.Height, 0.1f, 100f, reverseDepthBuffer: true);
 
             // Constant Buffer
             var constantBufferDescription = new BufferDescription(64, BufferFlags.ConstantBuffer, ResourceUsage.Default);
@@ -119,7 +119,7 @@ namespace DrawTextureCube
 
             var resourceLayoutDescription = new ResourceLayoutDescription(
                     new LayoutElementDescription(0, ResourceType.ConstantBuffer, ShaderStages.Vertex),
-                    new LayoutElementDescription(0, ResourceType.Texture, ShaderStages.Pixel),
+                    new LayoutElementDescription(0, ResourceType.TextureView, ShaderStages.Pixel),
                     new LayoutElementDescription(0, ResourceType.Sampler, ShaderStages.Pixel));
 
             this.resourceLayout = this.graphicsContext.Factory.CreateResourceLayout(ref resourceLayoutDescription);

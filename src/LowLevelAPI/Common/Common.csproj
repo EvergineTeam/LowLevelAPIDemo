@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -14,11 +14,12 @@
 
   <ItemGroup>
 	<PackageReference Include="glTF2Loader" Version="1.1.3-alpha" />
-    <PackageReference Include="Evergine.Common" Version="2025.10.21.8" />
-    <PackageReference Include="Evergine.Mathematics" Version="2025.10.21.8" />
+    <PackageReference Include="Evergine.Common" Version="2026.5.19.266-nightly" />
+    <PackageReference Include="Evergine.Mathematics" Version="2026.5.19.266-nightly" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
     <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
+	<PackageReference Include="SixLabors.ImageSharp" Version="3.1.12" />
   </ItemGroup>
 
 </Project>

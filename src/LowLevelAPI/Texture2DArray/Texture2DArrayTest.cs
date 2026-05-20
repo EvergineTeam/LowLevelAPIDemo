@@ -69,7 +69,7 @@ namespace Texture2DArray
             var samplerState = this.graphicsContext.Factory.CreateSamplerState(ref samplerDescription);
 
             ResourceLayoutDescription layoutDescription = new ResourceLayoutDescription(
-                    new LayoutElementDescription(0, ResourceType.Texture, ShaderStages.Pixel),
+                    new LayoutElementDescription(0, ResourceType.TextureView, ShaderStages.Pixel),
                     new LayoutElementDescription(0, ResourceType.Sampler, ShaderStages.Pixel));
             ResourceLayout resourceLayout = this.graphicsContext.Factory.CreateResourceLayout(ref layoutDescription);
 

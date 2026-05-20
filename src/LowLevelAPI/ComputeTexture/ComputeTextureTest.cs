@@ -77,7 +77,6 @@ namespace ComputeTexture
                 Depth = 1,
                 MipLevels = 1,
                 ArraySize = 1,
-                Faces = 1,
                 CpuAccess = ResourceCpuAccess.None,
                 SampleCount = TextureSampleCount.None,
             };
@@ -96,7 +95,7 @@ namespace ComputeTexture
 
             ResourceLayoutDescription computeLayoutDescription = new ResourceLayoutDescription(
                 new LayoutElementDescription(0, ResourceType.ConstantBuffer, ShaderStages.Compute),
-                new LayoutElementDescription(0, ResourceType.TextureReadWrite, ShaderStages.Compute));
+                new LayoutElementDescription(0, ResourceType.TextureViewReadWrite, ShaderStages.Compute));
 
             ResourceLayout computeResourceLayout = this.graphicsContext.Factory.CreateResourceLayout(ref computeLayoutDescription);
 
@@ -127,7 +126,7 @@ namespace ComputeTexture
             var samplerState = this.graphicsContext.Factory.CreateSamplerState(ref samplerDescription);
 
             ResourceLayoutDescription layoutDescription = new ResourceLayoutDescription(
-                   new LayoutElementDescription(0, ResourceType.Texture, ShaderStages.Pixel),
+                   new LayoutElementDescription(0, ResourceType.TextureView, ShaderStages.Pixel),
                    new LayoutElementDescription(0, ResourceType.Sampler, ShaderStages.Pixel));
             ResourceLayout resourceLayout = this.graphicsContext.Factory.CreateResourceLayout(ref layoutDescription);
 

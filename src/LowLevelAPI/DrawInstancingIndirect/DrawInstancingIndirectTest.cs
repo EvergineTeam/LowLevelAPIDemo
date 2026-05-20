@@ -189,7 +189,7 @@ namespace DrawInstancingIndirect
 
             ResourceLayoutDescription layoutDescription = new ResourceLayoutDescription(
                     new LayoutElementDescription(0, ResourceType.ConstantBuffer, ShaderStages.Vertex),
-                    new LayoutElementDescription(0, ResourceType.Texture, ShaderStages.Pixel),
+                    new LayoutElementDescription(0, ResourceType.TextureView, ShaderStages.Pixel),
                     new LayoutElementDescription(0, ResourceType.Sampler, ShaderStages.Pixel));
             ResourceLayout resourceLayout = this.graphicsContext.Factory.CreateResourceLayout(ref layoutDescription);
 
@@ -234,7 +234,7 @@ namespace DrawInstancingIndirect
         {
             // Update
             this.time += (float)gameTime.TotalSeconds;
-            Matrix4x4 proj = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)this.frameBuffer.Width / this.frameBuffer.Height, 1.0f, 20000f);
+            Matrix4x4 proj = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)this.frameBuffer.Width / this.frameBuffer.Height, 1.0f, 20000f, reverseDepthBuffer: true);
             Matrix4x4 view = Matrix4x4.CreateRotationY(this.time * 0.03f) * Matrix4x4.CreateLookAt(new Vector3(0, 2000, 7000), new Vector3(0, 0, 2500), Vector3.UnitY);
             this.vertexData.projView = Matrix4x4.Multiply(view, proj);
 

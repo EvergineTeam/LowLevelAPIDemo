@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.10.35027.167
+# Visual Studio Version 18
+VisualStudioVersion = 18.6.11806.211 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{9FF22F89-3492-452D-A1BF-9557C6CB16FC}"
 EndProject
@@ -24,6 +24,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComputeTexture", "ComputeTexture\ComputeTexture.csproj", "{5068C0D3-C454-4CCC-A6F1-72BAC0BDD7C2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawMeshlets", "DrawMeshlets\DrawMeshlets.csproj", "{61FA3EA1-F403-4B5D-915F-2CB6687F28E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextureViews", "TextureViews\TextureViews.csproj", "{A02BF714-4CBD-C90D-009C-3C294832A76D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{61FA3EA1-F403-4B5D-915F-2CB6687F28E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61FA3EA1-F403-4B5D-915F-2CB6687F28E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61FA3EA1-F403-4B5D-915F-2CB6687F28E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A02BF714-4CBD-C90D-009C-3C294832A76D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A02BF714-4CBD-C90D-009C-3C294832A76D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A02BF714-4CBD-C90D-009C-3C294832A76D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A02BF714-4CBD-C90D-009C-3C294832A76D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

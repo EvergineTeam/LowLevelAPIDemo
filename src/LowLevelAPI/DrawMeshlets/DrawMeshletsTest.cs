@@ -266,7 +266,7 @@ namespace DrawMeshlets
             this.view = Matrix4x4.CreateLookAt(new Vector3(0, 0.105f, 0.4f), new Vector3(0, 0.105f, 0), Vector3.UnitY); // horse
             this.view2 = Matrix4x4.CreateLookAt(new Vector3(0, 0.105f, 0.4f), new Vector3(0.3f, 0.105f, 0), Vector3.UnitY); // culling
             //this.view = Matrix4x4.CreateLookAt(new Vector3(0, 1, 5f), new Vector3(0, 1, 0), Vector3.UnitY);
-            this.proj = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)this.frameBuffer.Width / (float)this.frameBuffer.Height, 0.1f, 10000f);
+            this.proj = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)this.frameBuffer.Width / (float)this.frameBuffer.Height, 0.1f, 10000f, reverseDepthBuffer: true);
             this.worldInfo = new WorldInfo();
 
             // Constant Buffer
@@ -281,7 +281,7 @@ namespace DrawMeshlets
                                                                   BufferFlags.BufferStructured | BufferFlags.ShaderResource,
                                                                   ResourceUsage.Default,
                                                                   ResourceCpuAccess.None,
-                                                                  Unsafe.SizeOf<Vector3>());
+                                                                  Unsafe.SizeOf<float>());
             this.positionBuffer = this.graphicsContext.Factory.CreateBuffer(positions, ref positionBufferDescription);
 
             // Meshlet Buffer
@@ -403,7 +403,7 @@ namespace DrawMeshlets
             commandBuffer.SetViewports(this.viewports);
             commandBuffer.SetScissorRectangles(this.scissors);
 
-            RenderPassDescription renderPassDescription = new RenderPassDescription(this.frameBuffer, new ClearValue(ClearFlags.All, 1, 0, new Color(0.23f, 0.23f, 0.31f) /*Color.CornflowerBlue*/));
+            RenderPassDescription renderPassDescription = new RenderPassDescription(this.frameBuffer, new ClearValue(ClearFlags.All, new Color(0.23f, 0.23f, 0.31f) /*Color.CornflowerBlue*/));
             commandBuffer.BeginRenderPass(ref renderPassDescription);
 
             commandBuffer.SetMeshShaderPipelineState(this.pipelineState);

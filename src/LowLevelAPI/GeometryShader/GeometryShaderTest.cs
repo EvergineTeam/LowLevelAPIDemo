@@ -35,7 +35,7 @@ namespace GeometryShader
         {
             this.viewports[0] = new Viewport(0, 0, width, height);
             this.scissors[0] = new Rectangle(0, 0, (int)width, (int)height);
-            this.proj = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)width / height, 0.1f, 100f);
+            this.proj = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)width / height, 0.1f, 100f, reverseDepthBuffer: true);
         }
 
         protected override async void InternalLoad()
@@ -54,7 +54,7 @@ namespace GeometryShader
             var vertexBuffer = this.graphicsContext.Factory.CreateBuffer(this.vertexData, ref vertexBufferDescription);
 
             this.view = Matrix4x4.CreateLookAt(new Vector3(0, 2, 3), new Vector3(0, 0, 0), Vector3.UnitY);
-            this.proj = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)this.frameBuffer.Width / (float)this.frameBuffer.Height, 0.1f, 100f);
+            this.proj = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)this.frameBuffer.Width / (float)this.frameBuffer.Height, 0.1f, 100f, reverseDepthBuffer: true);
 
             // Constant Buffer
             var constantBufferDescription = new BufferDescription(64, BufferFlags.ConstantBuffer, ResourceUsage.Default);

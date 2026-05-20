@@ -1,4 +1,4 @@
-﻿// Copyright © 2019 Wave Engine S.L. All rights reserved. Use is subject to license terms.
+﻿// Copyright © Plain Concepts S.L.U. All rights reserved. Use is subject to license terms.
 
 using System;
 using System.IO;
@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using Evergine.Assets.Extensions.DDS;
 using Evergine.Common.Graphics;
 using Evergine.Framework.Assets.Extensions;
+using CommonImageHelpers = Evergine.Common.Helpers.ImageHelpers;
 
 namespace VisualTests.LowLevel.Images
 {
@@ -77,7 +78,7 @@ namespace VisualTests.LowLevel.Images
         /// <param name="description">Image description.</param>
         public void DecodeHeader(BinaryReader reader, out ImageDescription description)
         {
-            Header header = ImageHelpers.ReadStruct<Header>(reader);
+            Header header = CommonImageHelpers.ReadUnmanaged<Header>(reader);
 
             DxgiFormat dxgiFormat;
             D3DFormat d3dFormat = D3DFormat.Unknown;
