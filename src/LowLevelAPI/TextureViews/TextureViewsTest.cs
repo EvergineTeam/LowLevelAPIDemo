@@ -75,7 +75,12 @@ namespace TextureViews
 
         private async Task createComputePipeline()
         {
-            var shaderDesc = await this.assetsDirectory.ReadAndCompileShader(this.graphicsContext, "ComputeFaces", "ComputeFaces", ShaderStages.Compute, "CS");
+            CompilerParameters cp = new CompilerParameters()
+            {
+                CompilationMode = CompilationMode.Debug,
+                Profile = GraphicsProfile.Level_11_0,
+            };
+            var shaderDesc = await this.assetsDirectory.ReadAndCompileShader(this.graphicsContext, "ComputeFaces", "ComputeFaces", ShaderStages.Compute, "CS", cp);
             var shader = this.graphicsContext.Factory.CreateShader(ref shaderDesc);
 
             ResourceLayoutDescription layoutDesc = new ResourceLayoutDescription(

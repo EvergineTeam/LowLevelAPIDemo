@@ -15,8 +15,6 @@ namespace RenderToTexture
             uint height = 720;
             using (var test = new RenderToTextureTest())
             {
-                test.GraphicsBackend = GraphicsBackend.Vulkan;
-
                 test.Initialize();
 
                 // Create Window
