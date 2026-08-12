@@ -333,3 +333,6 @@ EvergineContent.cs
 !**/Content/**/*.obj
 **/wwwroot/lib/
 **/wwwroot/evergine/
+# Local Tracy package feed used while developing the profiled sample
+src/LowLevelAPI/DrawTriangleProfiled/local-packages/
+src/LowLevelAPI/DrawTriangleProfiled/NuGet.config

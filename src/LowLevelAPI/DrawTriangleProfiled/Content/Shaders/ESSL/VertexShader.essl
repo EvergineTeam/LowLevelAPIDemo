@@ -1,0 +1,12 @@
+#version 300 es
+
+layout(location = 0) in vec4 in_var_POSITION;
+layout(location = 1) in vec4 in_var_COLOR;
+out vec4 var_COLOR;
+
+void main()
+{
+    gl_Position = in_var_POSITION;
+    var_COLOR = in_var_COLOR;
+}
+
