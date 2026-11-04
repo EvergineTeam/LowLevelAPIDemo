@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
@@ -46,7 +46,7 @@ namespace Common
 
         public Action<string> FPSUpdateCallback;
 
-        public GraphicsBackend GraphicsBackend { get; set; } = GraphicsBackend.Vulkan;
+        public GraphicsBackend GraphicsBackend { get; set; } = GraphicsBackend.DirectX12;
 
         public VisualTestDefinition()
             : this(string.Empty)
