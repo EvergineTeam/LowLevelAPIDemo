@@ -64,14 +64,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Evergine.Common" Version="2026.11.4.444-nightly" />
-	<PackageReference Include="Evergine.DirectX11" Version="2026.11.4.444-nightly" />
-	<PackageReference Include="Evergine.DirectX12" Version="2026.11.4.444-nightly" />
-	<PackageReference Include="Evergine.Mathematics" Version="2026.11.4.444-nightly" />
-	<PackageReference Include="Evergine.OpenGL" Version="2026.11.4.444-nightly" />
-	<PackageReference Include="Evergine.Forms" Version="2026.11.4.444-nightly" />
-	<PackageReference Include="Evergine.Vulkan" Version="2026.11.4.444-nightly" />
-	<PackageReference Include="Evergine.WebGPU" Version="2026.11.4.444-nightly" />
+    <PackageReference Include="Evergine.Common" Version="2026.11.5.670-nightly" />
+	<PackageReference Include="Evergine.DirectX11" Version="2026.11.5.670-nightly" />
+	<PackageReference Include="Evergine.DirectX12" Version="2026.11.5.670-nightly" />
+	<PackageReference Include="Evergine.Mathematics" Version="2026.11.5.670-nightly" />
+	<PackageReference Include="Evergine.OpenGL" Version="2026.11.5.670-nightly" />
+	<PackageReference Include="Evergine.Forms" Version="2026.11.5.670-nightly" />
+	<PackageReference Include="Evergine.Vulkan" Version="2026.11.5.670-nightly" />
+	<PackageReference Include="Evergine.WebGPU" Version="2026.11.5.670-nightly" />
 	<PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
   </ItemGroup>
 
