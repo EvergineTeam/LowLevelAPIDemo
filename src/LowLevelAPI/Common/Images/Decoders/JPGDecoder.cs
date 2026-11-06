@@ -1,6 +1,6 @@
 ﻿// Copyright © Plain Concepts S.L.U. All rights reserved. Use is subject to license terms.
 
-using SixLabors.ImageSharp.PixelFormats;
+using SkiaSharp;
 using System.IO;
 using Evergine.Common.Graphics;
 
@@ -44,7 +44,11 @@ namespace VisualTests.LowLevel.Images
         {
             var stream = reader.BaseStream;
             stream.Seek(0, SeekOrigin.Begin);
-            var imageInfo = SixLabors.ImageSharp.Image.Identify(stream);
+            SKImageInfo imageInfo;
+            using (var codec = SKCodec.Create(new SKManagedStream(stream)))
+            {
+                imageInfo = codec.Info;
+            }
 
             description = new ImageDescription()
             {
@@ -110,11 +114,7 @@ namespace VisualTests.LowLevel.Images
             this.DecodeHeader(reader, out description);
             reader.BaseStream.Seek(0, SeekOrigin.Begin);
 
-            byte[] data;
-            using (var image = SixLabors.ImageSharp.Image.Load<Rgba32>(reader.BaseStream))
-            {
-                data = ImageHelpers.GetImageArray(image, false, out _);
-            }
+            byte[] data = ImageHelpers.GetImageArray(reader.BaseStream, false, out _);
 
             uint rowPitch = description.pixelFormat.GetSizeInBytes(description.Width);
             uint slicePitch = description.pixelFormat.GetSizeInBytes(description.Width, description.Height);

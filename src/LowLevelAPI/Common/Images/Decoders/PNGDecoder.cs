@@ -1,6 +1,5 @@
 ﻿// Copyright © Plain Concepts S.L.U. All rights reserved. Use is subject to license terms.
 
-using SixLabors.ImageSharp.PixelFormats;
 using System;
 using System.IO;
 using Evergine.Common.Graphics;
@@ -80,11 +79,7 @@ namespace VisualTests.LowLevel.Images
             {
                 reader.BaseStream.Seek(0, SeekOrigin.Begin);
 
-                byte[] data;
-                using (var image = SixLabors.ImageSharp.Image.Load<Rgba32>(reader.BaseStream))
-                {
-                    data = ImageHelpers.GetImageArray(image, true, out _);
-                }
+                byte[] data = ImageHelpers.GetImageArray(reader.BaseStream, true, out _);
 
                 uint pitch = description.pixelFormat.GetSizeInBytes(description.Width);
                 uint sliceSize = description.pixelFormat.GetSizeInBytes(description.Width, description.Height);
